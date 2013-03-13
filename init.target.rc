@@ -64,3 +64,9 @@ service thermal-engine /system/bin/thermal-engine
 
 on property:qcom.thermal=thermal-engine
     start thermal-engine
+
+service qrngd /system/bin/qrngd -f
+   class main
+   user root
+   group root
+
