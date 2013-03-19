@@ -6,6 +6,7 @@ PRODUCT_DEVICE := msm8226
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf \
+	device/qcom/msm8226/snd_soc_msm/snd_soc_msm_Tapan:system/etc/snd_soc_msm/snd_soc_msm_Tapan \
 
 #fstab.qcom
 PRODUCT_PACKAGES += fstab.qcom
