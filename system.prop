@@ -26,7 +26,7 @@ debug.sf.fb_always_on=1
 
 debug.sf.hw=1
 debug.egl.hw=1
-debug.composition.type=gpu
+debug.composition.type=c2d
 persist.hwc.mdpcomp.enable=false
 debug.mdpcomp.logs=0
 dalvik.vm.heapsize=36m
