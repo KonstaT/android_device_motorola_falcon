@@ -324,6 +324,133 @@ SectionVerb
 
 EndSection
 }
+SectionUseCase."Voice2" {
+Comment "Voice2 use case"
+SectionVerb
+	Name "Voice2"
+
+	EnableSequence
+		'SLIM_0_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer SLIM_0_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+		'SLIM_0_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer SLIM_0_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionVerb
+	Name "Voice2 CallBT SCO Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'Internal BTSCO SampleRate':1:8000
+		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionVerb
+	Name "Voice2 CallBT SCO Tx"
+
+	EnableSequence
+		'Internal BTSCO SampleRate':1:8000
+		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionVerb
+	Name "Voice2 CallBT SCO WB Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'Internal BTSCO SampleRate':1:8000
+		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionVerb
+	Name "Voice2 CallBT SCO WB Tx"
+
+	EnableSequence
+		'Internal BTSCO SampleRate':1:16000
+		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionVerb
+	Name "Voice2 CallPROXY Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'AFE_PCM_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionVerb
+	Name "Voice2 CallPROXY Tx"
+
+	EnableSequence
+		'AFE_PCM_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+}
 SectionDevice
 	Name "Earpiece"
 	Comment "Handset Rx device"
@@ -843,6 +970,165 @@ SectionModifier
         # ALSA PCMs
         PlaybackPCM 5
         CapturePCM 6
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2"
+
+	EnableSequence
+		'SLIM_0_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer SLIM_0_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+		'SLIM_0_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer SLIM_0_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	CapturePCM 14
+	PlaybackPCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2BT SCO Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'Internal BTSCO SampleRate':1:8000
+		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2BT SCO Tx"
+
+	EnableSequence
+		'Internal BTSCO SampleRate':1:8000
+		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2BT SCO WB Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'Internal BTSCO SampleRate':1:16000
+		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2BT SCO WB Tx"
+
+	EnableSequence
+		'Internal BTSCO SampleRate':1:16000
+		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2PROXY Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'AFE_PCM_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2PROXY Tx"
+
+	EnableSequence
+		'AFE_PCM_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2USB PROXY Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'AFE_PCM_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play Voice2USB PROXY Tx"
+
+	EnableSequence
+		'AFE_PCM_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
 
 EndSection
 # End of master file
