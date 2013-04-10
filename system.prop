@@ -70,5 +70,3 @@ telephony.lteOnCdmaDevice=1
 # simulate sdcard on /data/media
 #
 persist.fuse_sdcard=true
-#system prop for Bluetooth hci transport
-ro.qualcomm.bt.hci_transport=smd
