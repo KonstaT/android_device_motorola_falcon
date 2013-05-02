@@ -41,7 +41,7 @@ BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 
-TARGET_BOOTIMG_SIGNED := true
+#TARGET_BOOTIMG_SIGNED := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
