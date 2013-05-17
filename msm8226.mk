@@ -19,3 +19,9 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8226/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     device/qcom/msm8226/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     device/qcom/msm8226/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
+
+#ANT stack
+PRODUCT_PACKAGES += \
+    AntHalService \
+    libantradio \
+    antradio_app
