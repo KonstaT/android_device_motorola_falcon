@@ -32,9 +32,6 @@
 PATH=/sbin:/system/sbin:/system/bin:/system/xbin
 export PATH
 
-# Set a default value
-setprop qcom.thermal thermal-engine
-
 platformid=`cat /sys/devices/system/soc/soc0/id`
 
 THERMAL_ENGINE_CONF_SYMLINK=/etc/thermal-engine.conf
@@ -47,3 +44,4 @@ if [ ! -h $THERMAL_ENGINE_CONF_SYMLINK ]; then
  esac
 fi
 
+start thermal-engine
