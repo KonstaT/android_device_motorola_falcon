@@ -3005,7 +3005,7 @@ SectionDevice
 		'IIR1 Enable Band3':1:1
 		'IIR1 Enable Band4':1:1
 		'IIR1 Enable Band5':1:1
-		'IIR1 INP1 Volume':1:50
+		'IIR1 INP1 Volume':1:43
 		'RX1 MIX2 INP1':0:IIR1
 		'CLASS_H_DSM MUX':0:RX_HPHL
 		'RX1 Digital Volume':1:67
@@ -3175,7 +3175,7 @@ SectionDevice
 		'IIR1 Enable Band3':1:1
 		'IIR1 Enable Band4':1:1
 		'IIR1 Enable Band5':1:1
-		'IIR1 INP1 Volume':1:62
+		'IIR1 INP1 Volume':1:55
 		'RX1 MIX2 INP1':0:IIR1
 		'RX2 MIX2 INP1':0:IIR1
 		'CLASS_H_DSM MUX':0:RX_HPHL
@@ -3381,7 +3381,7 @@ SectionDevice
 		'IIR1 Enable Band3':1:1
 		'IIR1 Enable Band4':1:1
 		'IIR1 Enable Band5':1:1
-		'IIR1 INP1 Volume':1:62
+		'IIR1 INP1 Volume':1:55
 		'RX1 MIX2 INP1':0:IIR1
 		'RX2 MIX2 INP1':0:IIR1
 		'CLASS_H_DSM MUX':0:RX_HPHL
@@ -3455,7 +3455,7 @@ SectionDevice
 		'IIR1 Enable Band3':1:1
 		'IIR1 Enable Band4':1:1
 		'IIR1 Enable Band5':1:1
-		'IIR1 INP1 Volume':1:62
+		'IIR1 INP1 Volume':1:55
 		'RX1 MIX2 INP1':0:IIR1
 		'RX2 MIX2 INP1':0:IIR1
 		'CLASS_H_DSM MUX':0:RX_HPHL
