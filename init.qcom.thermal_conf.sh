@@ -32,12 +32,16 @@
 PATH=/sbin:/system/sbin:/system/bin:/system/xbin
 export PATH
 
-platformid=`cat /sys/devices/system/soc/soc0/id`
+hw_platform=`cat /sys/devices/system/soc/soc0/hw_platform`
 
 THERMAL_ENGINE_CONF_SYMLINK=/etc/thermal-engine.conf
 # symlink already exists, exit
 if [ ! -h $THERMAL_ENGINE_CONF_SYMLINK ]; then
- case "$platformid" in
+ case "$hw_platform" in
+     "QRD") #MSM8226 QRD
+     ln -s /etc/thermal-engine-8226-qrd.conf $THERMAL_ENGINE_CONF_SYMLINK 2>/dev/null
+     ;;
+
      *) #MSM8226, etc
      ln -s /etc/thermal-engine-8226.conf $THERMAL_ENGINE_CONF_SYMLINK 2>/dev/null
      ;;
