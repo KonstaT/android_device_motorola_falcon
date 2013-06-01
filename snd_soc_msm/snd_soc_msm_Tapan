@@ -3281,8 +3281,8 @@ SectionDevice
 		'RX2 Digital Volume':1:65
 		'ANC Slot':1:0
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ANC1 MUX':0:ADC5
-		'ANC2 MUX':0:ADC4
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC5
 		'ADC5 Volume':1:85
 		'ADC4 Volume':1:85
 	EndSequence
@@ -3306,6 +3306,55 @@ SectionDevice
 	EndSequence
 
 	ACDBID	26:1
+	EffectsMixerCTL "SRS TruMedia"
+	EC_REF_RXMixerCTL "SLIM_RX"
+
+EndSection
+
+SectionDevice
+	Name "ANC FB Headset"
+	Comment "ANC FB Headset Rx device"
+
+	EnableSequence
+		'ANC Function':0:ON
+		'SLIM RX1 MUX':0:AIF1_PB
+		'SLIM RX2 MUX':0:AIF1_PB
+		'SLIM_0_RX Channels':0:Two
+		'RX1 MIX1 INP1':0:RX1
+		'RX2 MIX1 INP1':0:RX2
+		'CLASS_H_DSM MUX':0:RX_HPHL
+		'HPHL DAC Switch':1:1
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
+		'RX1 Digital Volume':1:65
+		'RX2 Digital Volume':1:65
+		'ANC Slot':1:1
+		'ANC1 FB MUX':0:EAR_HPH_L
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC5
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
+	EndSequence
+
+	DisableSequence
+		'SLIM RX1 MUX':0:ZERO
+		'SLIM RX2 MUX':0:ZERO
+		'RX1 MIX1 INP1':0:ZERO
+		'RX2 MIX1 INP1':0:ZERO
+		'CLASS_H_DSM MUX':0:ZERO
+		'HPHL DAC Switch':1:0
+		'HPHL Volume':1:0
+		'HPHR Volume':1:0
+		'RX1 Digital Volume':1:0
+		'RX2 Digital Volume':1:0
+		'ANC1 MUX':0:ZERO
+		'ANC2 MUX':0:ZERO
+		'ADC5 Volume':1:0
+		'ADC4 Volume':1:0
+		'ANC Function':0:OFF
+	EndSequence
+
+	ACDBID  27:1
 	EffectsMixerCTL "SRS TruMedia"
 	EC_REF_RXMixerCTL "SLIM_RX"
 
@@ -3342,8 +3391,8 @@ SectionDevice
 		'RX1 Digital Volume':1:65
 		'RX2 Digital Volume':1:65
 		'ANC Slot':1:0
-		'ANC1 MUX':0:ADC5
-		'ANC2 MUX':0:ADC4
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ADC5 Volume':1:85
 		'ADC4 Volume':1:85
@@ -3381,6 +3430,80 @@ SectionDevice
 	EndSequence
 
 	ACDBID	26:1
+	EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
+	Name "Voice ANC FB Headset"
+	Comment "ANC FB Headset Rx device for voice call"
+
+	EnableSequence
+		'ANC Function':0:ON
+		'SLIM RX1 MUX':0:AIF1_PB
+		'SLIM RX2 MUX':0:AIF1_PB
+		'SLIM_0_RX Channels':0:Two
+		'RX1 MIX1 INP1':0:RX1
+		'RX2 MIX1 INP1':0:RX2
+		'IIR1 Band1':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Band2':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Band3':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Band4':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Band5':2:0x10000000 0x0 0x0 0x0 0x0
+		'IIR1 Enable Band1':1:1
+		'IIR1 Enable Band2':1:1
+		'IIR1 Enable Band3':1:1
+		'IIR1 Enable Band4':1:1
+		'IIR1 Enable Band5':1:1
+		'IIR1 INP1 Volume':1:62
+		'RX1 MIX2 INP1':0:IIR1
+		'RX2 MIX2 INP1':0:IIR1
+		'CLASS_H_DSM MUX':0:RX_HPHL
+		'HPHL DAC Switch':1:1
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
+		'RX1 Digital Volume':1:65
+		'RX2 Digital Volume':1:65
+		'ANC Slot':1:1
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC5
+		'ANC1 FB MUX':0:EAR_HPH_L
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
+	EndSequence
+
+	DisableSequence
+		'SLIM RX1 MUX':0:ZERO
+		'SLIM RX2 MUX':0:ZERO
+		'RX1 MIX1 INP1':0:ZERO
+		'RX2 MIX1 INP1':0:ZERO
+		'RX1 MIX2 INP1':0:ZERO
+		'RX2 MIX2 INP1':0:ZERO
+		'IIR1 Enable Band1':1:0
+		'IIR1 Enable Band2':1:0
+		'IIR1 Enable Band3':1:0
+		'IIR1 Enable Band4':1:0
+		'IIR1 Enable Band5':1:0
+		'IIR1 Band1':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 Band2':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 Band3':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 Band4':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 Band5':2:0x0 0x0 0x0 0x0 0x0
+		'IIR1 INP1 Volume':1:0
+		'CLASS_H_DSM MUX':0:ZERO
+		'HPHL DAC Switch':1:0
+		'HPHL Volume':1:0
+		'HPHR Volume':1:0
+		'RX1 Digital Volume':1:0
+		'RX2 Digital Volume':1:0
+		'ANC1 MUX':0:ZERO
+		'ANC2 MUX':0:ZERO
+		'ADC5 Volume':1:0
+		'ADC4 Volume':1:0
+		'ANC Function':0:OFF
+	EndSequence
+
+	ACDBID  27:1
 	EffectsMixerCTL "SRS TruMedia"
 
 EndSection
@@ -3865,8 +3988,8 @@ SectionDevice
 		'RX1 Digital Volume':1:65
 		'RX2 Digital Volume':1:65
 		'ANC Slot':1:0
-		'ANC1 MUX':0:ADC5
-		'ANC2 MUX':0:ADC4
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ADC5 Volume':1:85
 		'ADC4 Volume':1:85
@@ -3892,6 +4015,55 @@ SectionDevice
 	EndSequence
 
 	ACDBID	26:1
+	EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
+	Name "SPDIF ANC FB Headset"
+	Comment "SPDIF + ANC FB Headset Rx device"
+
+	EnableSequence
+		'ANC Function':0:ON
+		'SLIM RX1 MUX':0:AIF1_PB
+		'SLIM RX2 MUX':0:AIF1_PB
+		'SLIM_0_RX Channels':0:Two
+		'RX1 MIX1 INP1':0:RX1
+		'RX2 MIX1 INP1':0:RX2
+		'CLASS_H_DSM MUX':0:RX_HPHL
+		'HPHL DAC Switch':1:1
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
+		'RX1 Digital Volume':1:65
+		'RX2 Digital Volume':1:65
+		'ANC Slot':1:1
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC5
+		'ANC1 FB MUX':0:EAR_HPH_L
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
+	EndSequence
+
+	DisableSequence
+		'SLIM RX1 MUX':0:ZERO
+		'SLIM RX2 MUX':0:ZERO
+		'RX1 MIX1 INP1':0:ZERO
+		'RX2 MIX1 INP1':0:ZERO
+		'CLASS_H_DSM MUX':0:ZERO
+		'HPHL DAC Switch':1:0
+		'HPHR DAC Switch':1:0
+		'HPHL Volume':1:0
+		'HPHR Volume':1:0
+		'RX1 Digital Volume':1:0
+		'RX2 Digital Volume':1:0
+		'ANC1 MUX':0:ZERO
+		'ANC2 MUX':0:ZERO
+		'ADC5 Volume':1:0
+		'ADC4 Volume':1:0
+		'ANC Function':0:OFF
+	EndSequence
+
+	ACDBID  27:1
 	EffectsMixerCTL "SRS TruMedia"
 
 EndSection
@@ -4012,8 +4184,8 @@ SectionDevice
 		'RX1 Digital Volume':1:65
 		'RX2 Digital Volume':1:65
 		'ANC Slot':1:0
-		'ANC1 MUX':0:ADC5
-		'ANC2 MUX':0:ADC4
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ADC5 Volume':1:85
 		'ADC4 Volume':1:85
@@ -4039,6 +4211,56 @@ SectionDevice
 	EndSequence
 
 	ACDBID	26:1
+	EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
+	Name "PROXY Rx ANC FB Headset"
+	Comment "PROXY Rx ANC FB Headset Rx device combo device"
+
+	EnableSequence
+		'ANC Function':0:ON
+		'SLIM RX1 MUX':0:AIF1_PB
+		'SLIM RX2 MUX':0:AIF1_PB
+		'SLIM_0_RX Channels':0:Two
+		'RX1 MIX1 INP1':0:RX1
+		'RX2 MIX1 INP1':0:RX2
+		'CLASS_H_DSM MUX':0:RX_HPHL
+		'HPHL DAC Switch':1:1
+		'HPHR DAC Switch':1:1
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
+		'RX1 Digital Volume':1:65
+		'RX2 Digital Volume':1:65
+		'ANC Slot':1:1
+		'ANC1 MUX':0:ADC4
+		'ANC2 MUX':0:ADC5
+		'ANC1 FB MUX':0:EAR_HPH_L
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
+	EndSequence
+
+	DisableSequence
+		'SLIM RX1 MUX':0:ZERO
+		'SLIM RX2 MUX':0:ZERO
+		'RX1 MIX1 INP1':0:ZERO
+		'RX2 MIX1 INP1':0:ZERO
+		'CLASS_H_DSM MUX':0:ZERO
+		'HPHL DAC Switch':1:0
+		'HPHR DAC Switch':1:0
+		'HPHL Volume':1:0
+		'HPHR Volume':1:0
+		'RX1 Digital Volume':1:0
+		'RX2 Digital Volume':1:0
+		'ANC1 MUX':0:ZERO
+		'ANC2 MUX':0:ZERO
+		'ADC5 Volume':1:0
+		'ADC4 Volume':1:0
+		'ANC Function':0:OFF
+	EndSequence
+
+	ACDBID  27:1
 	EffectsMixerCTL "SRS TruMedia"
 
 EndSection
