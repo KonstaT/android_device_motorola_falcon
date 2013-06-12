@@ -58,6 +58,9 @@ on post-fs-data
 on post-fs
     export LD_PRELOAD /vendor/lib/libNimsWrap.so
 
+on boot
+    insmod /system/lib/modules/adsprpc.ko
+
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
@@ -106,3 +109,7 @@ service audiod /system/bin/audiod
    user system
    group system
 
+service adsprpcd /system/bin/adsprpcd
+   class main
+   user media
+   group media
