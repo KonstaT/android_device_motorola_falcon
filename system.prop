@@ -77,3 +77,10 @@ telephony.lteOnCdmaDevice=1
 # simulate sdcard on /data/media
 #
 persist.fuse_sdcard=true
+
+#
+#snapdragon value add features
+#
+ro.qc.sdk.audio.ssr=false
+##fluencetype can be "fluence" or "fluencepro" or "none"
+ro.qc.sdk.audio.fluencetype=none
