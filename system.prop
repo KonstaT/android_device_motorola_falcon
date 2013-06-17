@@ -84,3 +84,6 @@ persist.fuse_sdcard=true
 ro.qc.sdk.audio.ssr=false
 ##fluencetype can be "fluence" or "fluencepro" or "none"
 ro.qc.sdk.audio.fluencetype=none
+
+# Enable/disable cabl
+ro.qualcomm.cabl=1
