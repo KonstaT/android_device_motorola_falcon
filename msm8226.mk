@@ -1,5 +1,5 @@
 # media_profiles and media_codecs xmls for 8226
-ifeq ($(TARGET_USES_QCOM_BSP), true)
+ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/qcom/msm8226/media/media_profiles_8226.xml:system/etc/media_profiles.xml \
                       device/qcom/msm8226/media/media_codecs_8226.xml:system/etc/media_codecs.xml
 endif
