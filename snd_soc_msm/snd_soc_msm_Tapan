@@ -4857,14 +4857,16 @@ SectionDevice
 		'AIF1_CAP Mixer SLIM TX1':1:1
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX1 MUX':0:DEC1
-		'DEC1 MUX':0:DMIC1
-		'DEC1 Volume':1:67
+		'DEC1 MUX':0:ADC1
+		'ADC1 Volume':1:100
+		'DEC1 Volume':1:68
 	EndSequence
 
 	DisableSequence
 		'AIF1_CAP Mixer SLIM TX1':1:0
 		'SLIM TX1 MUX':0:ZERO
 		'DEC1 MUX':0:ZERO
+		'ADC1 Volume':1:0
 	EndSequence
 
 	ACDBID  36:2
