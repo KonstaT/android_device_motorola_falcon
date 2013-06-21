@@ -87,3 +87,6 @@ ro.qc.sdk.audio.fluencetype=none
 
 # Enable/disable cabl
 ro.qualcomm.cabl=1
+
+# system prop for NFC DT
+ro.nfc.port=I2C
