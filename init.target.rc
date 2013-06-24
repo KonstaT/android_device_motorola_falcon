@@ -60,6 +60,8 @@ on post-fs
 on boot
     start imsqmidaemon
     insmod /system/lib/modules/adsprpc.ko
+    # Enable writing to led blink node from userspace
+    chown system system /sys/class/leds/red/blink
 
 #Start the qcom-system-daemon service
 service qcomsysd /system/bin/qcom-system-daemon
