@@ -4575,6 +4575,195 @@ SectionDevice
 EndSection
 
 SectionDevice
+	Name "SSR QMIC"
+	Comment "Quad mic device for Surround Sound Recording"
+
+	EnableSequence
+		'SLIM_0_TX Channels':0:Four
+		'AIF1_CAP Mixer SLIM TX1':1:1
+		'AIF1_CAP Mixer SLIM TX2':1:1
+		'AIF1_CAP Mixer SLIM TX3':1:1
+		'AIF1_CAP Mixer SLIM TX4':1:1
+		'SLIM TX1 MUX':0:DEC1
+		'DEC1 MUX':0:DMIC1
+		'DEC1 Volume':1:68
+		'SLIM TX2 MUX':0:DEC2
+		'DEC2 MUX':0:DMIC2
+		'DEC2 Volume':1:68
+		'SLIM TX3 MUX':0:DEC3
+		'DEC3 MUX':0:DMIC3
+		'DEC3 Volume':1:68
+		'SLIM TX4 MUX':0:DEC4
+		'DEC4 MUX':0:DMIC4
+		'DEC4 Volume':1:68
+	EndSequence
+
+	DisableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:0
+		'AIF1_CAP Mixer SLIM TX2':1:0
+		'AIF1_CAP Mixer SLIM TX3':1:0
+		'AIF1_CAP Mixer SLIM TX4':1:0
+		'SLIM TX1 MUX':0:ZERO
+		'DEC1 MUX':0:ZERO
+		'SLIM TX2 MUX':0:ZERO
+		'DEC2 MUX':0:ZERO
+		'SLIM TX3 MUX':0:ZERO
+		'DEC3 MUX':0:ZERO
+		'SLIM TX4 MUX':0:ZERO
+		'DEC4 MUX':0:ZERO
+	EndSequence
+
+	ACDBID  46:2
+	EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
+	Name "DMIC Endfire"
+	Comment "Dual MIC Endfire Tx device"
+
+	EnableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:1
+		'AIF1_CAP Mixer SLIM TX2':1:1
+		'SLIM TX1 MUX':0:DEC1
+		'DEC1 MUX':0:ADC1
+		'ADC1 Volume':1:100
+		'DEC1 Volume':1:68
+		'SLIM TX2 MUX':0:DEC2
+		'DEC2 MUX':0:ADC3
+		'ADC3 Volume':1:100
+		'DEC2 Volume':1:68
+		'SLIM_0_TX Channels':0:Two
+		'IIR1 INP1 MUX':0:DEC1
+	EndSequence
+
+	DisableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:0
+		'AIF1_CAP Mixer SLIM TX2':1:0
+		'SLIM TX1 MUX':0:ZERO
+		'DEC1 MUX':0:ZERO
+		'SLIM TX2 MUX':0:ZERO
+		'DEC2 MUX':0:ZERO
+		'IIR1 INP1 MUX':0:ZERO
+	EndSequence
+
+	ACDBID	6:2
+	EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
+	Name "Speaker DMIC Endfire"
+	Comment "Dual MIC Endfire Tx device"
+
+	EnableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:1
+		'AIF1_CAP Mixer SLIM TX2':1:1
+		'SLIM TX1 MUX':0:DEC1
+		'DEC1 MUX':0:ADC1
+		'ADC1 Volume':1:100
+		'DEC1 Volume':1:68
+		'SLIM TX2 MUX':0:DEC2
+		'DEC2 MUX':0:ADC3
+		'ADC3 Volume':1:100
+		'DEC2 Volume':1:68
+		'SLIM_0_TX Channels':0:Two
+		'IIR1 INP1 MUX':0:DEC1
+	EndSequence
+
+	DisableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:0
+		'AIF1_CAP Mixer SLIM TX2':1:0
+		'SLIM TX1 MUX':0:ZERO
+		'DEC1 MUX':0:ZERO
+		'SLIM TX2 MUX':0:ZERO
+		'DEC2 MUX':0:ZERO
+		'IIR1 INP1 MUX':0:ZERO
+	EndSequence
+
+	ACDBID	13:2
+	EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
+
+        Name "QMIC"
+        Comment "Quad mic device"
+
+        EnableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:1
+		'AIF1_CAP Mixer SLIM TX2':1:1
+		'AIF1_CAP Mixer SLIM TX3':1:1
+		'AIF1_CAP Mixer SLIM TX4':1:1
+                'SLIM_0_TX Channels':0:Four
+                'SLIM TX1 MUX':0:DEC1
+                'DEC1 MUX':0:DMIC1
+		'DEC1 Volume':1:68
+                'SLIM TX2 MUX':0:DEC2
+                'DEC2 MUX':0:DMIC2
+		'DEC2 Volume':1:68
+                'SLIM TX3 MUX':0:DEC3
+                'DEC3 MUX':0:DMIC3
+		'DEC3 Volume':1:68
+                'SLIM TX4 MUX':0:DEC4
+                'DEC4 MUX':0:DMIC4
+		'DEC4 Volume':1:68
+        EndSequence
+
+        DisableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:0
+		'AIF1_CAP Mixer SLIM TX2':1:0
+		'AIF1_CAP Mixer SLIM TX3':1:0
+		'AIF1_CAP Mixer SLIM TX4':1:0
+                'SLIM TX1 MUX':0:ZERO
+                'DEC1 MUX':0:ZERO
+                'SLIM TX2 MUX':0:ZERO
+                'DEC2 MUX':0:ZERO
+                'SLIM TX3 MUX':0:ZERO
+                'DEC3 MUX':0:ZERO
+                'SLIM TX4 MUX':0:ZERO
+                'DEC4 MUX':0:ZERO
+        EndSequence
+
+        ACDBID  19:2
+	EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
+	Name "Speaker DMIC Stereo"
+	Comment "Speaker Dual MIC Stereo Tx device"
+
+	EnableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:1
+		'AIF1_CAP Mixer SLIM TX2':1:1
+		'SLIM TX1 MUX':0:DEC1
+		'DEC1 MUX':0:ADC1
+		'ADC1 Volume':1:100
+		'DEC1 Volume':1:68
+		'SLIM TX2 MUX':0:DEC2
+		'DEC2 MUX':0:ADC3
+		'ADC3 Volume':1:100
+		'DEC2 Volume':1:68
+		'SLIM_0_TX Channels':0:Two
+	EndSequence
+
+	DisableSequence
+		'AIF1_CAP Mixer SLIM TX1':1:0
+		'AIF1_CAP Mixer SLIM TX2':1:0
+		'SLIM TX1 MUX':0:ZERO
+		'DEC1 MUX':0:ZERO
+		'SLIM TX2 MUX':0:ZERO
+		'DEC2 MUX':0:ZERO
+	EndSequence
+
+	ACDBID	35:2
+	EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
 	Name "Voice ANC Headset"
 	Comment "ANC Headset Rx device for voice call"
 
