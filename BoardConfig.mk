@@ -82,3 +82,4 @@ TARGET_USES_ION := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 TARGET_ADDITIONAL_BOOTCLASSPATH := qcmediaplayer:WfdCommon:oem-services:qcom.fmradio
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
