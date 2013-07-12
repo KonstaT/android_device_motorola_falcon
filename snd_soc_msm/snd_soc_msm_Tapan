@@ -5073,7 +5073,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX1 MUX':0:DEC1
 		'DEC1 MUX':0:ADC1
-                'ADC1 Volume':1:44
+                'ADC1 Volume':1:100
 		'DEC1 Volume':1:68
 		'IIR1 INP1 MUX':0:DEC1
 	EndSequence
