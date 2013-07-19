@@ -60,6 +60,10 @@ on post-fs
 on boot
     insmod /system/lib/modules/adsprpc.ko
 
+#Start the qcom-system-daemon service
+service qcomsysd /system/bin/qcom-system-daemon
+    class main
+
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
