@@ -3584,8 +3584,8 @@ SectionVerb
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -3601,8 +3601,8 @@ SectionVerb
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -3618,8 +3618,8 @@ SectionVerb
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -3636,8 +3636,8 @@ SectionVerb
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -3654,8 +3654,8 @@ SectionVerb
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -3672,8 +3672,8 @@ SectionVerb
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -3690,8 +3690,8 @@ SectionVerb
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 }
@@ -7853,8 +7853,8 @@ SectionModifier
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -7870,8 +7870,8 @@ SectionModifier
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -7887,8 +7887,8 @@ SectionModifier
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	capturePCM 14
+	PlaybackPCM 17
+	capturePCM 17
 
 EndSection
 
@@ -7905,8 +7905,8 @@ SectionModifier
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
+	PlaybackPCM 17
+	CapturePCM 17
 
 EndSection
 
@@ -7923,8 +7923,8 @@ SectionModifier
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
+	PlaybackPCM 17
+	CapturePCM 17
 
 EndSection
 
@@ -7941,8 +7941,8 @@ SectionModifier
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
+	PlaybackPCM 17
+	CapturePCM 17
 
 EndSection
 
@@ -7959,8 +7959,8 @@ SectionModifier
 	EndSequence
 
 	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
+	PlaybackPCM 17
+	CapturePCM 17
 
 EndSection
 
