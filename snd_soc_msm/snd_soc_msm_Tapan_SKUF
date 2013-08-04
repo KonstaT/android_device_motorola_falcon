@@ -4514,8 +4514,8 @@ SectionDevice
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
-		'ADC5 Volume':1:85
-		'ADC4 Volume':1:85
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -4559,8 +4559,8 @@ SectionDevice
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
-		'ADC5 Volume':1:40
-		'ADC4 Volume':1:40
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -4808,8 +4808,8 @@ SectionDevice
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:85
-		'ADC4 Volume':1:85
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -4878,8 +4878,8 @@ SectionDevice
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:40
-		'ADC4 Volume':1:40
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -4949,7 +4949,7 @@ SectionDevice
 		'SLIM TX1 MUX':0:DEC1
 		'DEC1 MUX':0:ADC2
 		'DEC1 Volume':1:68
-		'ADC2 Volume':1:100
+		'ADC2 Volume':1:65
 		'IIR1 INP1 MUX':0:DEC1
 	EndSequence
 
@@ -4975,7 +4975,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX1 MUX':0:DEC1
 		'DEC1 MUX':0:ADC1
-		'ADC1 Volume':1:100
+		'ADC1 Volume':1:65
 		'DEC1 Volume':1:68
 		'IIR1 INP1 MUX':0:DEC1
 	EndSequence
@@ -5003,7 +5003,7 @@ SectionDevice
 		'SLIM TX1 MUX':0:DEC1
 		'DEC1 MUX':0:ADC1
 		'DEC1 Volume':1:68
-		'ADC1 Volume':1:100
+		'ADC1 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -5027,7 +5027,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX1 MUX':0:DEC1
 		'DEC1 MUX':0:ADC1
-                'ADC1 Volume':1:100
+		'ADC1 Volume':1:65
 		'DEC1 Volume':1:68
 		'IIR1 INP1 MUX':0:DEC1
 	EndSequence
@@ -5054,7 +5054,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX1 MUX':0:DEC1
 		'DEC1 MUX':0:ADC1
-		'ADC1 Volume':1:100
+		'ADC1 Volume':1:65
 		'DEC1 Volume':1:68
 	EndSequence
 
@@ -5108,7 +5108,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX1 MUX':0:DEC1
 		'DEC1 MUX':0:ADC2
-		'ADC2 Volume':1:100
+		'ADC2 Volume':1:65
 		'IIR1 INP1 MUX':0:DEC1
 		'DEC1 Volume':1:68
 	EndSequence
@@ -5164,7 +5164,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX1 MUX':0:DEC1
 		'DEC1 MUX':0:ADC2
-		'ADC2 Volume':1:100
+		'ADC2 Volume':1:65
 		'IIR1 INP1 MUX':0:DEC1
 		'DEC1 Volume':1:68
 	EndSequence
@@ -5500,8 +5500,8 @@ SectionDevice
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:85
-		'ADC4 Volume':1:85
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -5585,8 +5585,8 @@ SectionDevice
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
-		'ADC5 Volume':1:85
-		'ADC4 Volume':1:85
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -5631,8 +5631,8 @@ SectionDevice
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:40
-		'ADC4 Volume':1:40
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -5810,8 +5810,8 @@ SectionDevice
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
-		'ADC5 Volume':1:85
-		'ADC4 Volume':1:85
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -5857,8 +5857,8 @@ SectionDevice
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:85
-		'ADC4 Volume':1:85
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -5903,8 +5903,8 @@ SectionDevice
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:40
-		'ADC4 Volume':1:40
+		'ADC5 Volume':1:65
+		'ADC4 Volume':1:65
 	EndSequence
 
 	DisableSequence
