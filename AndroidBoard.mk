@@ -69,13 +69,6 @@ LOCAL_SRC_FILES    := $(LOCAL_MODULE)
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE       := init.qcom.thermal_conf.sh
-LOCAL_MODULE_TAGS  := optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := $(LOCAL_MODULE)
-include $(BUILD_PREBUILT)
-
 ifeq ($(strip $(BOARD_HAS_ATH_WLAN_AR6004)),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE       := wpa_supplicant_ath6kl.conf
