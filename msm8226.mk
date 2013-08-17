@@ -41,7 +41,6 @@ PRODUCT_PACKAGES += \
     antradio_app
 
 # NFC packages
-ifeq ($(BOARD_HAVE_QCOM_NFC), true)
 PRODUCT_PACKAGES += \
     libnfc-nci \
     libnfc_nci_jni \
@@ -68,4 +67,3 @@ PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
         device/qcom/msm8226/nfc/libnfc-nci.conf:system/etc/libnfc-nci.conf
 
-endif
