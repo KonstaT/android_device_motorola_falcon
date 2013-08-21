@@ -146,3 +146,13 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
 
+service wcnss-service /system/bin/wcnss_service
+   class late_start
+   user system
+   group system wifi
+   disabled
+   oneshot
+
+on property:wlan.driver.ath=0
+    start wcnss-service
+
