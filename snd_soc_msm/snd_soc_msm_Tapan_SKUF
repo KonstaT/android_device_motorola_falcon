@@ -1911,7 +1911,7 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "Voice2 CallHDMI"
+	Name "Voice2HDMI"
 
 	EnableSequence
 	EndSequence
@@ -1928,7 +1928,7 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "Voice2 CallHDMI Tx"
+	Name "Voice2HDMI Tx"
 
 	EnableSequence
 		'HDMI_RX_Voice Mixer Voice2':1:1
@@ -1945,7 +1945,7 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "Voice2 CallBT SCO Rx"
+	Name "Voice2BT SCO Rx"
 
 	EnableSequence
 	EndSequence
@@ -1963,7 +1963,7 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "Voice2 CallBT SCO Tx"
+	Name "Voice2BT SCO Tx"
 
 	EnableSequence
 		'Internal BTSCO SampleRate':1:8000
@@ -1981,7 +1981,7 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "Voice2 CallBT SCO WB Rx"
+	Name "Voice2BT SCO WB Rx"
 
 	EnableSequence
 	EndSequence
@@ -1999,7 +1999,7 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "Voice2 CallBT SCO WB Tx"
+	Name "Voice2BT SCO WB Tx"
 
 	EnableSequence
 		'Internal BTSCO SampleRate':1:16000
@@ -2017,7 +2017,7 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "Voice2 CallPROXY Rx"
+	Name "Voice2PROXY Rx"
 
 	EnableSequence
 	EndSequence
@@ -2034,7 +2034,7 @@ SectionVerb
 EndSection
 
 SectionVerb
-	Name "Voice2 CallPROXY Tx"
+	Name "Voice2PROXY Tx"
 
 	EnableSequence
 		'AFE_PCM_RX_Voice Mixer Voice2':1:1
@@ -2931,6 +2931,41 @@ SectionVerb
 	PlaybackPCM 9
 
 EndSection
+
+SectionVerb
+	Name "Voice2USB PROXY Tx"
+
+	EnableSequence
+		'AFE_PCM_RX_Voice Mixer Voice2':1:1
+		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionVerb
+	Name "Voice2USB PROXY Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'AFE_PCM_RX_Voice Mixer Voice2':1:0
+		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+}
 
 SectionVerb
 	Name "HiFi TunnelPROXY Rx Speaker"
@@ -4064,133 +4099,6 @@ SectionVerb
 
 	# ALSA PCMs
 	PlaybackPCM 15
-
-EndSection
-}
-SectionUseCase."Voice2" {
-Comment "Voice2 use case"
-SectionVerb
-	Name "Voice2"
-
-	EnableSequence
-		'SLIM_0_RX_Voice Mixer Voice2':1:1
-		'Voice2_Tx Mixer SLIM_0_TX_Voice2':1:1
-	EndSequence
-
-	DisableSequence
-		'SLIM_0_RX_Voice Mixer Voice2':1:0
-		'Voice2_Tx Mixer SLIM_0_TX_Voice2':1:0
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
-
-EndSection
-
-SectionVerb
-	Name "Voice2 CallBT SCO Rx"
-
-	EnableSequence
-	EndSequence
-
-	DisableSequence
-		'Internal BTSCO SampleRate':1:8000
-		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:0
-		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:0
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
-
-EndSection
-
-SectionVerb
-	Name "Voice2 CallBT SCO Tx"
-
-	EnableSequence
-		'Internal BTSCO SampleRate':1:8000
-		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:1
-		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:1
-	EndSequence
-
-	DisableSequence
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
-
-EndSection
-
-SectionVerb
-	Name "Voice2 CallBT SCO WB Rx"
-
-	EnableSequence
-	EndSequence
-
-	DisableSequence
-		'Internal BTSCO SampleRate':1:8000
-		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:0
-		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:0
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
-
-EndSection
-
-SectionVerb
-	Name "Voice2 CallBT SCO WB Tx"
-
-	EnableSequence
-		'Internal BTSCO SampleRate':1:16000
-		'INTERNAL_BT_SCO_RX_Voice Mixer Voice2':1:1
-		'Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2':1:1
-	EndSequence
-
-	DisableSequence
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
-
-EndSection
-
-SectionVerb
-	Name "Voice2 CallPROXY Rx"
-
-	EnableSequence
-	EndSequence
-
-	DisableSequence
-		'AFE_PCM_RX_Voice Mixer Voice2':1:0
-		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:0
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
-
-EndSection
-
-SectionVerb
-	Name "Voice2 CallPROXY Tx"
-
-	EnableSequence
-		'AFE_PCM_RX_Voice Mixer Voice2':1:1
-		'Voice2_Tx Mixer AFE_PCM_TX_Voice2':1:1
-	EndSequence
-
-	DisableSequence
-	EndSequence
-
-	# ALSA PCMs
-	PlaybackPCM 14
-	CapturePCM 14
 
 EndSection
 }
