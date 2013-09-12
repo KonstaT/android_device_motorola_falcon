@@ -83,6 +83,7 @@ PROTOBUF_SUPPORTED := true
 
 TARGET_USES_ION := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+TARGET_USES_INTERACTION_BOOST := true
 
 TARGET_ADDITIONAL_BOOTCLASSPATH := qcom.fmradio:oem-services:WfdCommon:qcmediaplayer
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
