@@ -4698,16 +4698,16 @@ SectionDevice
 		'RX2 MIX1 INP1':0:RX2
 		'CLASS_H_DSM MUX':0:RX_HPHL
 		'HPHL DAC Switch':1:1
-		'HPHL Volume':1:100
-		'HPHR Volume':1:100
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
 		'RX1 Digital Volume':1:68
 		'RX2 Digital Volume':1:68
 		'ANC Slot':1:0
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
-		'ADC5 Volume':1:65
-		'ADC4 Volume':1:65
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
 	EndSequence
 
 	DisableSequence
@@ -5036,16 +5036,16 @@ SectionDevice
 		'RX2 MIX2 INP1':0:IIR1
 		'CLASS_H_DSM MUX':0:RX_HPHL
 		'HPHL DAC Switch':1:1
-		'HPHL Volume':1:100
-		'HPHR Volume':1:100
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
 		'RX1 Digital Volume':1:68
 		'RX2 Digital Volume':1:68
 		'ANC Slot':1:0
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:65
-		'ADC4 Volume':1:65
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
 	EndSequence
 
 	DisableSequence
@@ -5787,16 +5787,16 @@ SectionDevice
 		'RX2 MIX1 INP1':0:RX2
 		'CLASS_H_DSM MUX':0:RX_HPHL
 		'HPHL DAC Switch':1:1
-		'HPHL Volume':1:100
-		'HPHR Volume':1:100
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
 		'RX1 Digital Volume':1:68
 		'RX2 Digital Volume':1:68
 		'ANC Slot':1:0
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:65
-		'ADC4 Volume':1:65
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
 	EndSequence
 
 	DisableSequence
@@ -5876,16 +5876,16 @@ SectionDevice
 		'RX2 MIX1 INP1':0:RX2
 		'CLASS_H_DSM MUX':0:RX_HPHL
 		'HPHL DAC Switch':1:1
-		'HPHL Volume':1:100
-		'HPHR Volume':1:100
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
 		'RX1 Digital Volume':1:68
 		'RX2 Digital Volume':1:68
 		'ANC Slot':1:0
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
-		'ADC5 Volume':1:65
-		'ADC4 Volume':1:65
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
 	EndSequence
 
 	DisableSequence
@@ -6109,16 +6109,16 @@ SectionDevice
 		'RX2 MIX1 INP1':0:RX2
 		'CLASS_H_DSM MUX':0:RX_HPHL
 		'HPHL DAC Switch':1:1
-		'HPHL Volume':1:100
-		'HPHR Volume':1:100
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
 		'RX1 Digital Volume':1:68
 		'RX2 Digital Volume':1:68
 		'ANC Slot':1:0
 		'ANC1 FB MUX':0:EAR_HPH_L
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
-		'ADC5 Volume':1:65
-		'ADC4 Volume':1:65
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
 	EndSequence
 
 	DisableSequence
@@ -6156,16 +6156,16 @@ SectionDevice
 		'CLASS_H_DSM MUX':0:RX_HPHL
 		'HPHL DAC Switch':1:1
 		'HPHR DAC Switch':1:1
-		'HPHL Volume':1:100
-		'HPHR Volume':1:100
+		'HPHL Volume':1:60
+		'HPHR Volume':1:60
 		'RX1 Digital Volume':1:68
 		'RX2 Digital Volume':1:68
 		'ANC Slot':1:0
 		'ANC1 MUX':0:ADC4
 		'ANC2 MUX':0:ADC5
 		'ANC1 FB MUX':0:EAR_HPH_L
-		'ADC5 Volume':1:65
-		'ADC4 Volume':1:65
+		'ADC5 Volume':1:40
+		'ADC4 Volume':1:40
 	EndSequence
 
 	DisableSequence
