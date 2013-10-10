@@ -21,13 +21,11 @@ PRODUCT_BOOT_JARS += qcmediaplayer:WfdCommon:oem-services:qcom.fmradio
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/qcom/msm8226/audio_policy.conf:system/etc/audio_policy.conf \
+    device/qcom/msm8226/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf \
-	device/qcom/msm8226/snd_soc_msm/snd_soc_msm_Tapan:system/etc/snd_soc_msm/snd_soc_msm_Tapan \
-	device/qcom/msm8226/snd_soc_msm/snd_soc_msm_Tapan_SKUF:system/etc/snd_soc_msm/snd_soc_msm_Tapan_SKUF \
-	device/qcom/msm8226/snd_soc_msm/snd_soc_msm_TapanLite:system/etc/snd_soc_msm/snd_soc_msm_TapanLite \
+    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
 
 #fstab.qcom
 PRODUCT_PACKAGES += fstab.qcom
