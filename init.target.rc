@@ -54,7 +54,7 @@ on post-fs-data
 
 # import cne init file
 on post-fs
-    #export LD_PRELOAD /vendor/lib/libNimsWrap.so
+    export LD_PRELOAD /vendor/lib/libNimsWrap.so
 
 on boot
     start imsqmidaemon
