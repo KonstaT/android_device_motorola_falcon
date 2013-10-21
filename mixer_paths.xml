@@ -417,7 +417,39 @@
         <ctl name="COMP0 Switch" value="1" />
     </path>
 
-   <path name="sidetone-iir">
+    <path name="speaker-lite">
+        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+        <ctl name="SLIM_0_RX Channels" value="One" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="SPK DAC Switch" value="1" />
+    </path>
+
+    <path name="speaker-skuf">
+        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+        <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
+        <ctl name="SLIM_0_RX Channels" value="Two" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="RX4 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC5 MUX" value="DEM4" />
+        <ctl name="COMP2 Switch" value="1" />
+        <ctl name="LINEOUT1 Volume" value="20" />
+        <ctl name="LINEOUT2 Volume" value="20" />
+    </path>
+
+    <path name="speaker-lite-skuf">
+        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+        <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
+        <ctl name="SLIM_0_RX Channels" value="Two" />
+        <ctl name="RX2 MIX1 INP1" value="RX1" />
+        <ctl name="RX3 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC5 MUX" value="DEM4" />
+        <ctl name="RDAC4 MUX" value="DEM3" />
+        <ctl name="RDAC3 MUX" value="DEM2" />
+        <ctl name="LINEOUT1 Volume" value="20" />
+        <ctl name="LINEOUT2 Volume" value="20" />
+    </path>
+
+    <path name="sidetone-iir">
         <ctl name="IIR1 Enable Band1" value="1" />
         <ctl name="IIR1 Enable Band2" value="1" />
         <ctl name="IIR1 Enable Band3" value="1" />
@@ -515,6 +547,32 @@
         <ctl name="RX4 MIX1 INP2" value="RX2" />
         <ctl name="SPK DAC Switch" value="1" />
         <ctl name="COMP0 Switch" value="1" />
+    </path>
+
+    <path name="speaker-and-headphones-lite">
+        <path name="headphones" />
+        <ctl name="RX4 MIX1 INP1" value="RX1" />
+        <ctl name="RX4 MIX1 INP2" value="RX2" />
+        <ctl name="SPK DAC Switch" value="1" />
+    </path>
+
+    <path name="speaker-and-headphones-skuf">
+        <path name="headphones" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="RX4 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC5 MUX" value="DEM4" />
+        <ctl name="COMP2 Switch" value="1" />
+        <ctl name="LINEOUT1 Volume" value="20" />
+        <ctl name="LINEOUT2 Volume" value="20" />
+    </path>
+
+    <path name="speaker-and-headphones-lite-skuf">
+        <path name="headphones" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="RDAC5 MUX" value="DEM4" />
+        <ctl name="RDAC4 MUX" value="DEM2" />
+        <ctl name="LINEOUT1 Volume" value="20" />
+        <ctl name="LINEOUT2 Volume" value="20" />
     </path>
 
     <path name="usb-headphones">
