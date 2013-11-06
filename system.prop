@@ -114,3 +114,6 @@ tunnel.audio.encode = true
 af.resampler.quality=4
 #disbale tunnel mode playback by default
 audio.offload.disable=1
+
+#disable offload audio video playback by default
+av.offload.enable=false
