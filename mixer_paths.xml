@@ -513,7 +513,7 @@
         <ctl name="ANC1 FB MUX" value="EAR_HPH_L" />
     </path>
 
-    <path name="headphones">
+    <path name="headphones-lite">
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
         <ctl name="SLIM_0_RX Channels" value="Two" />
@@ -521,7 +521,15 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="CLASS_H_DSM MUX" value="RX_HPHL" />
         <ctl name="HPHL DAC Switch" value="1" />
+    </path>
+
+    <path name="headphones">
+        <path name="headphones-lite" />
         <ctl name="COMP1 Switch" value="1" />
+    </path>
+
+    <path name="headphones-lite-skuf">
+        <path name="headphones-lite" />
     </path>
 
     <path name="headset-mic">
@@ -550,6 +558,15 @@
         <path name="headphones" />
     </path>
 
+    <path name="voice-headphones-lite">
+        <path name="sidetone-headphones" />
+        <path name="headphones-lite" />
+    </path>
+
+    <path name="voice-headphones-lite-skuf">
+        <path name="voice-headphones-lite" />
+    </path>
+
     <path name="voice-headset-mic">
         <path name="headset-mic" />
     </path>
@@ -563,7 +580,7 @@
     </path>
 
     <path name="speaker-and-headphones-lite">
-        <path name="headphones" />
+        <path name="headphones-lite" />
         <ctl name="RX4 MIX1 INP1" value="RX1" />
         <ctl name="RX4 MIX1 INP2" value="RX2" />
         <ctl name="SPK DAC Switch" value="1" />
@@ -580,7 +597,7 @@
     </path>
 
     <path name="speaker-and-headphones-lite-skuf">
-        <path name="headphones" />
+        <path name="headphones-lite" />
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="RDAC5 MUX" value="DEM4" />
         <ctl name="RDAC4 MUX" value="DEM2" />
@@ -620,6 +637,17 @@
         <ctl name="RX4 MIX1 INP1" value="RX1" />
         <ctl name="RX4 MIX1 INP2" value="RX2" />
         <ctl name="SPK DAC Switch" value="1" />
+        <ctl name="COMP0 Switch" value="1" />
+    </path>
+
+    <path name="speaker-and-anc-headphones-skuf">
+        <path name="anc-headphones" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="RX4 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC5 MUX" value="DEM4" />
+        <ctl name="COMP2 Switch" value="1" />
+        <ctl name="LINEOUT1 Volume" value="20" />
+        <ctl name="LINEOUT2 Volume" value="20" />
     </path>
 
     <path name="anc-fb-headphones">
@@ -632,6 +660,17 @@
         <ctl name="RX4 MIX1 INP1" value="RX1" />
         <ctl name="RX4 MIX1 INP2" value="RX2" />
         <ctl name="SPK DAC Switch" value="1" />
+        <ctl name="COMP0 Switch" value="1" />
+    </path>
+
+    <path name="speaker-and-anc-fb-headphones-skuf">
+        <path name="anc-fb-headphones" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="RX4 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC5 MUX" value="DEM4" />
+        <ctl name="COMP2 Switch" value="1" />
+        <ctl name="LINEOUT1 Volume" value="20" />
+        <ctl name="LINEOUT2 Volume" value="20" />
     </path>
 
     <path name="voice-anc-headphones">
@@ -773,12 +812,16 @@
 
     <!-- TTY devices -->
 
-    <path name="tty-headphones">
+    <path name="tty-headphones-lite">
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="CLASS_H_DSM MUX" value="RX_HPHL" />
         <ctl name="HPHL DAC Switch" value="1" />
+    </path>
+
+    <path name="tty-headphones">
+        <path name="tty-headphones-lite" />
         <ctl name="COMP1 Switch" value="1" />
     </path>
 
@@ -790,6 +833,24 @@
     <path name="voice-tty-vco-headphones">
         <ctl name="TTY Mode" value="VCO" />
         <path name="tty-headphones" />
+    </path>
+
+    <path name="voice-tty-full-headphones-lite">
+        <ctl name="TTY Mode" value="FULL" />
+        <path name="tty-headphones-lite" />
+    </path>
+
+    <path name="voice-tty-vco-headphones-lite">
+        <ctl name="TTY Mode" value="VCO" />
+        <path name="tty-headphones-lite" />
+    </path>
+
+    <path name="voice-tty-full-headphones-lite-skuf">
+        <path name="voice-tty-full-headphones-lite" />
+    </path>
+
+    <path name="voice-tty-vco-headphones-lite-skuf">
+        <path name="voice-tty-vco-headphones-lite" />
     </path>
 
     <path name="voice-tty-hco-handset">
