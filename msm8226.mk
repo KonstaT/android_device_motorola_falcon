@@ -1,4 +1,5 @@
 TARGET_USES_QCOM_BSP := true
+BOARD_HAVE_QCA_NFC := true
 
 ifeq ($(TARGET_USES_QCOM_BSP), true)
 # Add QC Video Enhancements flag
@@ -56,7 +57,7 @@ PRODUCT_PACKAGES += \
     antradio_app
 
 # NFC packages
-ifeq ($(BOARD_HAVE_QCOM_NFC), true)
+ifeq ($(BOARD_HAVE_QCA_NFC),true)
 PRODUCT_PACKAGES += \
     libnfc-nci \
     libnfc_nci_jni \
@@ -65,13 +66,6 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
-# NFCEE access control
-ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/qcom/msm8226/nfc/nfcee_access.xml
-else
-    NFCEE_ACCESS_PATH := device/qcom/msm8226/nfc/nfcee_access_debug.xml
-endif
-
 # file that declares the MIFARE NFC constant
 # Commands to migrate prefs from com.android.nfc3 to com.android.nfc
 # NFC access control + feature files + configuration
@@ -79,10 +73,8 @@ PRODUCT_COPY_FILES += \
         packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
         frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
         frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-        $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
-        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-        device/qcom/msm8226/nfc/libnfc-nci.conf:system/etc/libnfc-nci.conf
-endif
+        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
+endif # BOARD_HAVE_QCA_NFC
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.strict_op_enable=false
