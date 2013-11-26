@@ -4972,6 +4972,38 @@ SectionDevice
 	Name "Speaker DMIC Stereo"
 	Comment "Speaker Dual MIC Stereo Tx device"
 
+        EnableSequence
+                'AIF1_CAP Mixer SLIM TX1':1:1
+                'AIF1_CAP Mixer SLIM TX2':1:1
+                'SLIM TX1 MUX':0:DEC1
+                'DEC1 MUX':0:ADC1
+                'ADC1 Volume':1:100
+                'DEC1 Volume':1:68
+                'SLIM TX2 MUX':0:DEC2
+                'DEC2 MUX':0:ADC3
+                'ADC3 Volume':1:100
+                'DEC2 Volume':1:68
+                'SLIM_0_TX Channels':0:Two
+        EndSequence
+
+        DisableSequence
+                'AIF1_CAP Mixer SLIM TX1':1:0
+                'AIF1_CAP Mixer SLIM TX2':1:0
+                'SLIM TX1 MUX':0:ZERO
+                'DEC1 MUX':0:ZERO
+                'SLIM TX2 MUX':0:ZERO
+                'DEC2 MUX':0:ZERO
+        EndSequence
+
+        ACDBID  35:2
+        EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
+	Name "Handset DMIC Stereo"
+	Comment "Handset Dual MIC Stereo Tx device"
+
 	EnableSequence
 		'AIF1_CAP Mixer SLIM TX1':1:1
 		'AIF1_CAP Mixer SLIM TX2':1:1
@@ -4995,7 +5027,7 @@ SectionDevice
 		'DEC2 MUX':0:ZERO
 	EndSequence
 
-	ACDBID	35:2
+	ACDBID	34:2
 	EffectsMixerCTL "SRS TruMedia"
 
 EndSection
