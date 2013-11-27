@@ -5,8 +5,8 @@ ifeq ($(TARGET_USES_QCOM_BSP), true)
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 endif #TARGET_USES_QCOM_BSP
 
-TARGET_DISABLE_DASH := true
-TARGET_DISABLE_OMX_SECURE_TEST_APP := true
+#TARGET_DISABLE_DASH := true
+#TARGET_DISABLE_OMX_SECURE_TEST_APP := true
 
 # media_profiles and media_codecs xmls for 8226
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
@@ -24,7 +24,12 @@ PRODUCT_BOOT_JARS += qcmediaplayer:WfdCommon:oem-services:qcom.fmradio:org.codea
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/qcom/msm8226/audio_policy.conf:system/etc/audio_policy.conf \
+    device/qcom/msm8226/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     device/qcom/msm8226/mixer_paths.xml:system/etc/mixer_paths.xml
+
+PRODUCT_PACKAGES += \
+    libqcomvisualizer \
+    libqcomvoiceprocessing
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
