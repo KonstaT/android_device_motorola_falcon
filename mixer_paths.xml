@@ -716,8 +716,7 @@
 
     <path name="speaker-and-headphones-lite">
         <path name="headphones-lite" />
-        <ctl name="RX4 MIX1 INP1" value="RX1" />
-        <ctl name="RX4 MIX1 INP2" value="RX2" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="SPK DAC Switch" value="1" />
     </path>
 
