@@ -22,7 +22,7 @@ $(call inherit-product, device/qcom/common/common.mk)
 PRODUCT_NAME := msm8226
 PRODUCT_DEVICE := msm8226
 
-PRODUCT_BOOT_JARS += WfdCommon:oem-services:org.codeaurora.Performance
+PRODUCT_BOOT_JARS += WfdCommon:oem-services:qcom.fmradio:org.codeaurora.Performance
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
