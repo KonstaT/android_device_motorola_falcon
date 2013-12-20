@@ -158,7 +158,7 @@ on property:sys.ims.DATA_DAEMON_STATUS=1
 
 service wcnss-service /system/bin/wcnss_service
    class late_start
-   user root
+   user system
    group system wifi
    oneshot
 
