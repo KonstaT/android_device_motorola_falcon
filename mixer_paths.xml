@@ -252,6 +252,7 @@
     </path>
 
     <path name="deep-buffer-playback bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
         <path name="deep-buffer-playback bt-sco" />
     </path>
 
@@ -285,6 +286,7 @@
     </path>
 
     <path name="low-latency-playback bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
         <path name="low-latency-playback bt-sco" />
     </path>
 
@@ -326,6 +328,11 @@
         <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
+    <path name="compress-offload-playback bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <path name="compress-offload-playback bt-sco" />
+    </path>
+
     <path name="compress-offload-playback afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="1" />
     </path>
@@ -351,6 +358,11 @@
         <ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="1" />
     </path>
 
+    <path name="audio-record bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <path name="audio-record bt-sco" />
+    </path>
+
     <path name="audio-record usb-headset-mic">
         <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="1" />
     </path>
@@ -365,6 +377,11 @@
 
     <path name="audio-record-compress bt-sco">
         <ctl name="MultiMedia8 Mixer INTERNAL_BT_SCO_TX" value="1" />
+    </path>
+
+    <path name="audio-record-compress bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <path name="audio-record-compress bt-sco" />
     </path>
 
     <path name="audio-record-compress usb-headset-mic">
@@ -417,7 +434,7 @@
 
     <path name="voice2-call bt-sco-wb">
         <ctl name="Internal BTSCO SampleRate" value="16000" />
-        <path name="voice-call bt-sco" />
+        <path name="voice2-call bt-sco" />
     </path>
 
     <path name="voice2-call usb-headphones">
