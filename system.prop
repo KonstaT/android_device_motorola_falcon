@@ -117,3 +117,6 @@ av.offload.enable=true
 
 #enable voice path for PCM VoIP by default
 use.voice.path.for.pcm.voip=true
+
+#enable dsp gapless mode by default
+audio.offload.gapless.enabled=true
