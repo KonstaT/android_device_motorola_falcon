@@ -31,8 +31,8 @@
     <ctl name="ADC1 Volume" value="12" />
     <ctl name="ADC2 Volume" value="12" />
     <ctl name="ADC3 Volume" value="12" />
-    <ctl name="ADC4 Volume" value="12" />
-    <ctl name="ADC5 Volume" value="12" />
+    <ctl name="ADC4 Volume" value="0" />
+    <ctl name="ADC5 Volume" value="0" />
     <ctl name="DEC1 Volume" value="84" />
     <ctl name="DEC2 Volume" value="84" />
     <ctl name="DEC3 Volume" value="84" />
@@ -852,8 +852,8 @@
         <ctl name="ANC1 FB MUX" value="EAR_HPH_L" />
         <ctl name="ANC1 MUX" value="ADC4" />
         <ctl name="ANC2 MUX" value="ADC5" />
-        <ctl name="ADC5 Volume" value="7" />
-        <ctl name="ADC4 Volume" value="7" />
+        <ctl name="ADC5 Volume" value="8" />
+        <ctl name="ADC4 Volume" value="8" />
     </path>
 
     <path name="anc-headphones">
