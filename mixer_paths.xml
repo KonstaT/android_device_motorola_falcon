@@ -20,10 +20,10 @@
     <ctl name="Voip Evrc Min Max Rate Config" id="1" value="4" />
     <ctl name="Voip Dtx Mode" value="0" />
     <ctl name="TTY Mode" value="Off" />
-    <ctl name="LINEOUT1 Volume" value="14" />
-    <ctl name="LINEOUT2 Volume" value="14" />
-    <ctl name="HPHL Volume" value="14" />
-    <ctl name="HPHR Volume" value="14" />
+    <ctl name="LINEOUT1 Volume" value="20" />
+    <ctl name="LINEOUT2 Volume" value="20" />
+    <ctl name="HPHL Volume" value="20" />
+    <ctl name="HPHR Volume" value="20" />
     <ctl name="RX1 Digital Volume" value="84" />
     <ctl name="RX2 Digital Volume" value="84" />
     <ctl name="RX3 Digital Volume" value="84" />
@@ -910,8 +910,8 @@
         <path name="anc" />
         <path name="headphones" />
         <ctl name="COMP1 Switch" value="0" />
-        <ctl name="HPHL Volume" value="8" />
-        <ctl name="HPHR Volume" value="8" />
+        <ctl name="HPHL Volume" value="14" />
+        <ctl name="HPHR Volume" value="14" />
     </path>
 
     <path name="speaker-and-anc-headphones">
