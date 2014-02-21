@@ -51,10 +51,6 @@ on post-fs-data
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
 
-# import cne init file
-on post-fs
-    export LD_PRELOAD /vendor/lib/libNimsWrap.so
-
 on boot
     start imsqmidaemon
     insmod /system/lib/modules/adsprpc.ko
