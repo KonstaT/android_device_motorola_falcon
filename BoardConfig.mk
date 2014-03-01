@@ -17,6 +17,52 @@ TARGET_HAS_QC_KERNEL_SOURCE := true
 
 -include $(QCPATH)/common/msm8226/BoardConfigVendor.mk
 
+ifndef $(QC_PATH)
+USE_CAMERA_STUB := false
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_HAVE_BLUETOOTH := true
+BOARD_USES_ALSA_AUDIO := true
+BOARD_HAS_QCOM_WLAN := true
+USE_OPENGL_RENDERER := true
+TARGET_USES_QCOM_MM_AUDIO := true
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
+
+TARGET_USES_C2D_COMPOSITION := true
+DOLBY_DAP := true
+DOLBY_UDC := true
+
+ifeq ($(findstring true,$(BOARD_HAS_QCOM_WLAN)),true)
+   BOARD_WLAN_DEVICE := qcwcn
+   BOARD_HAS_ATH_WLAN_AR6004 := true
+   BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+   BOARD_HOSTAPD_DRIVER := NL80211
+   WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
+   WIFI_DRIVER_MODULE_NAME := "wlan"
+   WIFI_DRIVER_MODULE_ARG := ""
+   WPA_SUPPLICANT_VERSION := VER_0_8_X
+   HOSTAPD_VERSION := VER_0_8_X
+   TARGET_USES_QCOM_WCNSS_QMI := true
+   WIFI_DRIVER_FW_PATH_STA := "sta"
+   WIFI_DRIVER_FW_PATH_AP  := "ap"
+   WIFI_DRIVER_FW_PATH_P2P := "p2p"
+ifeq ($(call is-platform-sdk-version-at-least,17),true)
+   BOARD_HAS_CFG80211_KERNEL3_4 := true
+   BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+   BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+endif
+endif
+
+ifeq ($(BOARD_HAVE_BLUETOOTH), true)
+   BOARD_HAVE_BLUETOOTH_BLUEZ := false
+ifneq ($(BOARD_HAVE_BLUETOOTH_BLUEZ), true)
+   BOARD_HAVE_BLUETOOTH_QCOM := true
+   QCOM_BT_USE_SMD_TTY := true
+endif # BOARD_HAVE_BLUETOOTH_BLUEZ
+endif # BOARD_HAVE_BLUETOOTH
+
+endif #QC_PATH
+
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
 # to get rid of compilation error.
 TARGET_HAVE_HDMI_OUT := false
