@@ -31,8 +31,8 @@
     <ctl name="ADC1 Volume" value="12" />
     <ctl name="ADC2 Volume" value="12" />
     <ctl name="ADC3 Volume" value="12" />
-    <ctl name="ADC4 Volume" value="12" />
-    <ctl name="ADC5 Volume" value="12" />
+    <ctl name="ADC4 Volume" value="0" />
+    <ctl name="ADC5 Volume" value="0" />
     <ctl name="DEC1 Volume" value="84" />
     <ctl name="DEC2 Volume" value="84" />
     <ctl name="DEC3 Volume" value="84" />
@@ -50,6 +50,7 @@
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="AUX_PCM_RX_Voice Mixer CSVoice" value="0" />
     <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="0" />
+    <ctl name="SLIMBUS_0_RX Port Mixer INT_BT_SCO_TX" value="0" />
     <!-- Audio BTSCO -->
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia4" value="0" />
@@ -58,6 +59,8 @@
     <!-- Voice BTSCO -->
     <ctl name="Internal BTSCO SampleRate" value="8000" />
     <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer CSVoice" value="0" />
+    <ctl name="INTERNAL_BT_SCO_RX Audio Mixer Multimedia6" value="0" />
+    <ctl name="MultiMedia6 Mixer SLIM_0_TX" value="0" />
     <ctl name="Voice_Tx Mixer INTERNAL_BT_SCO_TX_Voice" value="0" />
     <ctl name="HDMI_RX_Voice Mixer CSVoice" value="0" />
     <ctl name="SLIM_0_RX_Voice Mixer CSVoice" value="0" />
@@ -127,6 +130,16 @@
     <ctl name="AFE_PCM_RX_Voice Mixer VoLTE" value="0" />
     <ctl name="VoLTE_Tx Mixer AFE_PCM_TX_VoLTE" value="0" />
     <!-- VoLTE -->
+
+    <!-- VoWLAN -->
+    <ctl name="SLIM_0_RX_Voice Mixer VoWLAN" value="0" />
+    <ctl name="VoWLAN_Tx Mixer SLIM_0_TX_VoWLAN" value="0" />
+    <ctl name="HDMI_RX_Voice Mixer VoWLAN" value="0" />
+    <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoWLAN" value="0" />
+    <ctl name="VoWLAN_Tx Mixer INTERNAL_BT_SCO_TX_VoWLAN" value="0" />
+    <ctl name="AFE_PCM_RX_Voice Mixer VoWLAN" value="0" />
+    <ctl name="VoWLAN_Tx Mixer AFE_PCM_TX_VoWLAN" value="0" />
+    <!-- VoWLAN -->
 
     <!-- Voice2 -->
     <ctl name="SLIM_0_RX_Voice Mixer Voice2" value="0" />
@@ -478,12 +491,49 @@
         <ctl name="VoLTE_Tx Mixer AFE_PCM_TX_VoLTE" value="1" />
     </path>
 
+    <path name="vowlan-call">
+        <ctl name="SLIM_0_RX_Voice Mixer VoWLAN" value="1" />
+        <ctl name="VoWLAN_Tx Mixer SLIM_0_TX_VoWLAN" value="1" />
+    </path>
+
+    <path name="vowlan-call hdmi">
+        <ctl name="HDMI_RX_Voice Mixer VoWLAN" value="1" />
+        <ctl name="VoWLAN_Tx Mixer SLIM_0_TX_VoWLAN" value="1" />
+    </path>
+
+    <path name="vowlan-call bt-sco">
+        <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoWLAN" value="1" />
+        <ctl name="VoWLAN_Tx Mixer INTERNAL_BT_SCO_TX_VoWLAN" value="1" />
+    </path>
+
+    <path name="vowlan-call bt-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <path name="vowlan-call bt-sco" />
+    </path>
+
+    <path name="vowlan-call usb-headphones">
+        <ctl name="AFE_PCM_RX_Voice Mixer VoWLAN" value="1" />
+        <ctl name="VoWLAN_Tx Mixer AFE_PCM_TX_VoWLAN" value="1" />
+    </path>
+
    <path name="incall-rec-uplink">
        <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="1" />
    </path>
 
     <path name="incall-rec-uplink bt-sco">
         <path name="incall-rec-uplink" />
+    </path>
+
+    <path name="hfp-sco">
+        <ctl name="SLIMBUS_0_RX Port Mixer INTERNAL_BT_SCO_TX" value="1" />
+        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia6" value="1" />
+        <ctl name="MultiMedia6 Mixer SLIM_0_TX" value="1" />
+        <ctl name="SLIMBUS_DL_HL Switch" value="1" />
+    </path>
+
+    <path name="hfp-sco-wb">
+        <ctl name="Internal BTSCO SampleRate" value="16000" />
+        <path name="hfp-sco" />
     </path>
 
     <path name="incall-rec-uplink bt-sco-wb">
@@ -852,8 +902,8 @@
         <ctl name="ANC1 FB MUX" value="EAR_HPH_L" />
         <ctl name="ANC1 MUX" value="ADC4" />
         <ctl name="ANC2 MUX" value="ADC5" />
-        <ctl name="ADC5 Volume" value="7" />
-        <ctl name="ADC4 Volume" value="7" />
+        <ctl name="ADC5 Volume" value="8" />
+        <ctl name="ADC4 Volume" value="8" />
     </path>
 
     <path name="anc-headphones">
