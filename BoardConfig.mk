@@ -67,6 +67,7 @@ endif #QC_PATH
 # to get rid of compilation error.
 TARGET_HAVE_HDMI_OUT := false
 TARGET_USES_OVERLAY := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_NO_BOOTLOADER := false
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
