@@ -20,10 +20,10 @@
     <ctl name="Voip Evrc Min Max Rate Config" id="1" value="4" />
     <ctl name="Voip Dtx Mode" value="0" />
     <ctl name="TTY Mode" value="Off" />
-    <ctl name="LINEOUT1 Volume" value="14" />
-    <ctl name="LINEOUT2 Volume" value="14" />
-    <ctl name="HPHL Volume" value="14" />
-    <ctl name="HPHR Volume" value="14" />
+    <ctl name="LINEOUT1 Volume" value="20" />
+    <ctl name="LINEOUT2 Volume" value="20" />
+    <ctl name="HPHL Volume" value="20" />
+    <ctl name="HPHR Volume" value="20" />
     <ctl name="RX1 Digital Volume" value="84" />
     <ctl name="RX2 Digital Volume" value="84" />
     <ctl name="RX3 Digital Volume" value="84" />
@@ -245,11 +245,19 @@
     <!-- audio record compress end-->
     <!-- listen -->
     <ctl name="LSM1 MUX" value="None" />
+    <ctl name="LSM2 MUX" value="None" />
+    <ctl name="LSM3 MUX" value="None" />
+    <ctl name="LSM4 MUX" value="None" />
+    <ctl name="LSM5 MUX" value="None" />
+    <ctl name="LSM6 MUX" value="None" />
+    <ctl name="LSM7 MUX" value="None" />
+    <ctl name="LSM8 MUX" value="None" />
     <ctl name="SLIMBUS_5_TX LSM Function" value="None" />
     <!-- listen end-->
     <!-- afe-proxy -->
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
     <!-- afe-proxy end-->
+    <ctl name="AFE_PCM_RX Port Mixer INTERNAL_FM_TX" value="0" />
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="deep-buffer-playback">
@@ -466,6 +474,12 @@
         <ctl name="SLIMBUS_DL_HL Switch" value="1" />
     </path>
 
+    <path name="play-fm usb-headphones">
+        <ctl name="Internal FM RX Volume" value="1" />
+        <ctl name="AFE_PCM_RX Port Mixer INTERNAL_FM_TX" value="1" />
+        <ctl name="SLIMBUS_DL_HL Switch" value="1" />
+    </path>
+
     <path name="volte-call">
         <ctl name="SLIM_0_RX_Voice Mixer VoLTE" value="1" />
         <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
@@ -654,8 +668,36 @@
         <ctl name="Voip_Tx Mixer AFE_PCM_TX_Voip" value="1" />
     </path>
 
-    <path name="listen-high-power">
+    <path name="listen-voice-wakeup-1">
         <ctl name="LSM1 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
+    </path>
+    <path name="listen-voice-wakeup-2">
+        <ctl name="LSM2 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
+    </path>
+    <path name="listen-voice-wakeup-3">
+        <ctl name="LSM3 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
+    </path>
+    <path name="listen-voice-wakeup-4">
+        <ctl name="LSM4 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
+    </path>
+    <path name="listen-voice-wakeup-5">
+        <ctl name="LSM5 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
+    </path>
+    <path name="listen-voice-wakeup-6">
+        <ctl name="LSM6 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
+    </path>
+    <path name="listen-voice-wakeup-7">
+        <ctl name="LSM7 MUX" value="SLIMBUS_5_TX" />
+        <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
+    </path>
+    <path name="listen-voice-wakeup-8">
+        <ctl name="LSM8 MUX" value="SLIMBUS_5_TX" />
         <ctl name="SLIMBUS_5_TX LSM Function" value="SWAUDIO" />
     </path>
 
@@ -910,8 +952,8 @@
         <path name="anc" />
         <path name="headphones" />
         <ctl name="COMP1 Switch" value="0" />
-        <ctl name="HPHL Volume" value="8" />
-        <ctl name="HPHR Volume" value="8" />
+        <ctl name="HPHL Volume" value="14" />
+        <ctl name="HPHR Volume" value="14" />
     </path>
 
     <path name="speaker-and-anc-headphones">
