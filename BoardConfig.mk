@@ -17,7 +17,7 @@ TARGET_HAS_QC_KERNEL_SOURCE := true
 
 -include $(QCPATH)/common/msm8226/BoardConfigVendor.mk
 
-ifndef $(QC_PATH)
+ifndef $(QCPATH)
 USE_CAMERA_STUB := false
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_QCOM_HARDWARE := true
@@ -61,7 +61,7 @@ ifneq ($(BOARD_HAVE_BLUETOOTH_BLUEZ), true)
 endif # BOARD_HAVE_BLUETOOTH_BLUEZ
 endif # BOARD_HAVE_BLUETOOTH
 
-endif #QC_PATH
+endif #QCPATH
 
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
 # to get rid of compilation error.
