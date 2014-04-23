@@ -52,7 +52,6 @@ on post-fs-data
     mkdir /tombstones/modem 0771 system system
 
 on boot
-    start imsqmidaemon
     insmod /system/lib/modules/adsprpc.ko
     # Enable writing to led blink node from userspace
     chown system system /sys/class/leds/red/blink
@@ -133,7 +132,6 @@ service imsqmidaemon /system/bin/imsqmidaemon
     user system
     socket ims_qmid stream 0660 system radio
     group ims radio net_raw log qcom_diag
-    disabled
 
 service imsdatadaemon /system/bin/imsdatadaemon
     class main
