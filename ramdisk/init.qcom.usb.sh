@@ -51,55 +51,46 @@ chown -h root.system /sys/devices/platform/msm_hsusb/gadget/wakeup
 chmod -h 220 /sys/devices/platform/msm_hsusb/gadget/wakeup
 
 #
-# Allow persistent usb charging disabling
-# User needs to set usb charging disabled in persist.usb.chgdisabled
-#
-target=`getprop ro.board.platform`
-usbchgdisabled=`getprop persist.usb.chgdisabled`
-case "$usbchgdisabled" in
-    "") ;; #Do nothing here
-    * )
-    case $target in
-        "msm8660")
-        echo "$usbchgdisabled" > /sys/module/pmic8058_charger/parameters/disabled
-        echo "$usbchgdisabled" > /sys/module/smb137b/parameters/disabled
-	;;
-        "msm8960")
-        echo "$usbchgdisabled" > /sys/module/pm8921_charger/parameters/disabled
-	;;
-    esac
-esac
-
-usbcurrentlimit=`getprop persist.usb.currentlimit`
-case "$usbcurrentlimit" in
-    "") ;; #Do nothing here
-    * )
-    case $target in
-        "msm8960")
-        echo "$usbcurrentlimit" > /sys/module/pm8921_charger/parameters/usb_max_current
-	;;
-    esac
-esac
-#
 # Allow USB enumeration with default PID/VID
 #
 echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
 usb_config=`getprop persist.sys.usb.config`
 bootmode=`getprop ro.bootmode`
 buildtype=`getprop ro.build.type`
+
 case "$bootmode" in
     "bp-tools" )
-        setprop persist.sys.usb.config diag,serial_smd,serial_tty,rmnet,usbnet,adb
+        if [ "$usb_config" != "diag,serial_smd,serial_tty,rmnet,usbnet,adb" ]
+        then
+            setprop persist.sys.usb.config diag,serial_smd,serial_tty,rmnet,usbnet,adb
+        fi
     ;;
     "factory" )
-        setprop persist.sys.usb.config usbnet
+        allow_adb=`getprop persist.factory.allow_adb`
+        case "$allow_adb" in
+            "1")
+                if [ "$usb_config" != "usbnet,adb" ]
+                then
+                    setprop persist.sys.usb.config usbnet,adb
+                fi
+            ;;
+            *)
+                if [ "$usb_config" != "usbnet" ]
+                then
+                    setprop persist.sys.usb.config usbnet
+                fi
+            ;;
+        esac
     ;;
     "qcom" )
-        setprop persist.sys.usb.config diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb
+        if [ "$usb_config" != "diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb" ]
+        then
+            setprop persist.sys.usb.config diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb
+        fi
     ;;
     * )
         case "$usb_config" in
-            "ptp,adb" | "mtp,adb" | "mass_storage,adb" | "ptp" | "mtp" | "mass_storage" )
+            "ptp,adb" | "mtp,adb" | "ptp" | "mtp" )
             ;;
             *)
                 case "$buildtype" in
@@ -112,89 +103,5 @@ case "$bootmode" in
                 esac
             ;;
         esac
-    ;;
-esac
-
-#
-# Add support for exposing lun0 as cdrom in mass-storage
-#
-target=`getprop ro.product.device`
-cdromname="/dev/block/platform/msm_sdcc.1/by-name/cdrom"
-cdromenable=`getprop persist.service.cdrom.enable`
-case "$target" in
-        "msm8226" | "msm8610")
-                case "$cdromenable" in
-                        0)
-                                echo "" > /sys/class/android_usb/android0/f_mass_storage/lun0/file
-                                ;;
-                        1)
-                                echo "mounting usbcdrom lun"
-                                echo $cdromname > /sys/class/android_usb/android0/f_mass_storage/lun0/file
-                                ;;
-                esac
-                ;;
-esac
-
-#
-# Select USB BAM - 2.0 or 3.0
-#
-case "$target" in
-    "msm8974")
-        echo hsusb > /sys/bus/platform/devices/usb_bam/enable
-    ;;
-    "apq8084")
-	if [ "$baseband" == "apq" ]; then
-		echo "msm_hsic_host" > /sys/bus/platform/drivers/xhci_msm_hsic/unbind
-	fi
-    ;;
-    "msm8226")
-         if [ -e /sys/bus/platform/drivers/msm_hsic_host ]; then
-             if [ ! -L /sys/bus/usb/devices/1-1 ]; then
-                 echo msm_hsic_host > /sys/bus/platform/drivers/msm_hsic_host/unbind
-             fi
-         fi
-    ;;
-esac
-
-#
-# set module params for embedded rmnet devices
-#
-rmnetmux=`getprop persist.rmnet.mux`
-case "$baseband" in
-    "mdm" | "dsda" | "sglte2")
-        case "$rmnetmux" in
-            "enabled")
-                    echo 1 > /sys/module/rmnet_usb/parameters/mux_enabled
-                    echo 8 > /sys/module/rmnet_usb/parameters/no_fwd_rmnet_links
-                    echo 17 > /sys/module/rmnet_usb/parameters/no_rmnet_insts_per_dev
-            ;;
-        esac
-        echo 1 > /sys/module/rmnet_usb/parameters/rmnet_data_init
-        # Allow QMUX daemon to assign port open wait time
-        chown -h radio.radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
-    ;;
-    "dsda2")
-          echo 2 > /sys/module/rmnet_usb/parameters/no_rmnet_devs
-          echo hsicctl,hsusbctl > /sys/module/rmnet_usb/parameters/rmnet_dev_names
-          case "$rmnetmux" in
-               "enabled") #mux is neabled on both mdms
-                      echo 3 > /sys/module/rmnet_usb/parameters/mux_enabled
-                      echo 8 > /sys/module/rmnet_usb/parameters/no_fwd_rmnet_links
-                      echo 17 > write /sys/module/rmnet_usb/parameters/no_rmnet_insts_per_dev
-               ;;
-               "enabled_hsic") #mux is enabled on hsic mdm
-                      echo 1 > /sys/module/rmnet_usb/parameters/mux_enabled
-                      echo 8 > /sys/module/rmnet_usb/parameters/no_fwd_rmnet_links
-                      echo 17 > /sys/module/rmnet_usb/parameters/no_rmnet_insts_per_dev
-               ;;
-               "enabled_hsusb") #mux is enabled on hsusb mdm
-                      echo 2 > /sys/module/rmnet_usb/parameters/mux_enabled
-                      echo 8 > /sys/module/rmnet_usb/parameters/no_fwd_rmnet_links
-                      echo 17 > /sys/module/rmnet_usb/parameters/no_rmnet_insts_per_dev
-               ;;
-          esac
-          echo 1 > /sys/module/rmnet_usb/parameters/rmnet_data_init
-          # Allow QMUX daemon to assign port open wait time
-          chown -h radio.radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
     ;;
 esac
