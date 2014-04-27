@@ -169,6 +169,11 @@ BOARD_SEPOLICY_UNION += \
     wpa_supplicant.te \
     zygote.te
 
+ifneq ($(TARGET_BUILD_VARIANT),user)
+BOARD_SEPOLICY_UNION += \
+    su.te
+endif
+
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
