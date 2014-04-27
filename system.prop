@@ -13,9 +13,9 @@ qcom.hw.aac.encoder=true
 ro.audio.fm_max_volume=4096
 
 # Bluetooth
+ro.qualcomm.bt.hci_transport=smd
 ro.bluetooth.hfp.ver=1.6
 ro.qualcomm.bluetooth.sap=false
-ro.qualcomm.bt.hci_transport=smd
 qcom.bt.le_dev_pwr_class=1
 
 # Display
@@ -91,3 +91,6 @@ persist.timed.enable=true
 
 # Webkit
 #persist.webview.provider=classic
+
+# Wifi
+wifi.interface=wlan0

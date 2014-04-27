@@ -43,8 +43,15 @@ case "$baseband" in
     "msm" | "csfb" | "svlte2a" | "mdm" | "sglte" | "sglte2" | "dsda2" | "unknown")
     start qmuxd
     case "$baseband" in
-        "svlte2a" | "csfb" | "sglte" | "sglte2")
+        "svlte2a" | "csfb")
           start qmiproxy
+        ;;
+        "sglte" | "sglte2" )
+          if [ "x$sgltecsfb" != "xtrue" ]; then
+              start qmiproxy
+          else
+              setprop persist.radio.voice.modem.index 0
+          fi
         ;;
         "dsda2")
           setprop persist.radio.multisim.config dsda

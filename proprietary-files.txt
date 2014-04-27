@@ -215,9 +215,7 @@ framework/qcrilhook.jar
 # RIL & misc
 bin/irsc_util
 bin/netmgrd
-bin/ptt_socket_app
 bin/qmuxd
-bin/rfs_access
 bin/rmt_storage
 lib/libmdmcutback.so
 lib/libmotext_inf.so
