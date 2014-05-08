@@ -78,6 +78,10 @@ on boot
     # usb charging
     chown system system /sys/class/power_supply/battery/charging_enabled
 
+    # display color calibration
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
+
     # setup trace dir
     mkdir /cache/trace 0777 root shell
     chown root shell /cache/trace
