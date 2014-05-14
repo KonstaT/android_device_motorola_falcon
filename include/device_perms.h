@@ -30,7 +30,8 @@
     { "persist.mot.proximity.", AID_RADIO, 0 }, \
     { "persist.sprint.dm", AID_SPRINT_EXTENSION, 0}, \
     { "persist.tcmd.", AID_MOT_TCMD, AID_SYSTEM }, \
-    { "persist.camera.", AID_MEDIA, 0 },
+    { "persist.camera.", AID_MEDIA, 0 }, \
+    { "persist.webview.", AID_SYSTEM, 0 },
 
 #define CONTROL_PERMS_APPEND \
     { "mmi-ril-daemon",AID_RADIO, AID_RADIO }, \

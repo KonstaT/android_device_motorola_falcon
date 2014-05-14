@@ -90,7 +90,7 @@ ro.telephony.call_ring.multiple=false
 persist.timed.enable=true
 
 # Webkit
-#persist.webview.provider=classic
+persist.webview.provider=chromium
 
 # Wifi
 wifi.interface=wlan0

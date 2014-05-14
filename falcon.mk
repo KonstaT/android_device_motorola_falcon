@@ -107,6 +107,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch
 
+# Webkit
+PRODUCT_PACKAGES += \
+    libwebcore
+
 # Wifi
 PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
