@@ -20,10 +20,7 @@ ifndef $(QCPATH)
 USE_CAMERA_STUB := false
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_HAVE_BLUETOOTH := true
-USE_OPENGL_RENDERER := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
-
-TARGET_USES_C2D_COMPOSITION := true
 
 ifeq ($(BOARD_HAVE_BLUETOOTH), true)
    BOARD_HAVE_BLUETOOTH_BLUEZ := false
@@ -35,11 +32,6 @@ endif # BOARD_HAVE_BLUETOOTH
 
 endif #QCPATH
 
-#TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
-# to get rid of compilation error.
-TARGET_HAVE_HDMI_OUT := false
-TARGET_USES_OVERLAY := true
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
@@ -83,6 +75,13 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_DISABLED_SSR := true
 
+# Display
+BOARD_EGL_CFG := device/motorola/falcon/egl.cfg
+USE_OPENGL_RENDERER := true
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
 # Kernel
 KERNEL_DEFCONFIG := msm8226_caf_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags androidboot.write_protect=0 zcache androidboot.selinux=permissive
@@ -93,8 +92,6 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x02000000
 
 TARGET_SPECIFIC_HEADER_PATH += device/motorola/falcon/include
-
-BOARD_EGL_CFG := device/motorola/falcon/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
@@ -111,7 +108,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
-TARGET_USES_ION := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Vendor init
