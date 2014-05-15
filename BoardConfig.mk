@@ -45,7 +45,7 @@ USE_CAMERA_STUB := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Display
-BOARD_EGL_CFG := device/motorola/falcon/egl.cfg
+BOARD_EGL_CFG := device/motorola/falcon/prebuilt/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
