@@ -19,6 +19,7 @@ PRODUCT_COPY_FILES += \
     device/motorola/falcon/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     device/motorola/falcon/mixer_paths.xml:system/etc/mixer_paths.xml
 
+# Audio
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -41,23 +42,3 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += wcnss_service \
 		    pronto_wlan.ko
-
-#ANT stack
-PRODUCT_PACKAGES += \
-    AntHalService \
-    libantradio \
-    antradio_app
-
-PRODUCT_COPY_FILES += \
-        frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
-        frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
-
-# Enable strict operation
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.strict_op_enable=false
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.whitelist=/system/etc/whitelist_appops.xml
-
-PRODUCT_COPY_FILES += \
-    device/motorola/falcon/whitelist_appops.xml:system/etc/whitelist_appops.xml
