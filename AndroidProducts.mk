@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/msm8226.mk
+	$(LOCAL_DIR)/falcon.mk
