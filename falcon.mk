@@ -20,6 +20,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.MSM8226
+
 # Wlan
 PRODUCT_PACKAGES += \
     wcnss_service \
