@@ -42,3 +42,5 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += wcnss_service \
 		    pronto_wlan.ko
+
+$(call inherit-product, device/motorola/falcon/prebuilt.mk)
