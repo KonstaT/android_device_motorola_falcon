@@ -8,8 +8,6 @@ PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto G
 PRODUCT_MANUFACTURER := motorola
 
-PRODUCT_BOOT_JARS += qcmediaplayer:WfdCommon:oem-services:qcom.fmradio:org.codeaurora.Performance:vcard
-
 # Audio
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
