@@ -17,6 +17,7 @@ PRODUCT_COPY_FILES += device/motorola/falcon/media/media_profiles_8226.xml:syste
 endif
 
 $(call inherit-product, device/qcom/common/common.mk)
+$(call inherit-product-if-exists, vendor/motorola/falcon/falcon-vendor.mk)
 
 PRODUCT_DEVICE := falcon
 PRODUCT_NAME := falcon
