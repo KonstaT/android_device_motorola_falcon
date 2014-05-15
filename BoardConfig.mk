@@ -68,7 +68,7 @@ endif #QCPATH
 TARGET_HAVE_HDMI_OUT := false
 TARGET_USES_OVERLAY := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_RPC := true
@@ -85,11 +85,6 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_HARDWARE_3D := false
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
-
-BOARD_KERNEL_BASE        := 0x00000000
-BOARD_KERNEL_PAGESIZE    := 2048
-BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
-BOARD_RAMDISK_OFFSET     := 0x02000000
 
 # Enables Adreno RS driver
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -110,8 +105,14 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 earlyprintk androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37
+# Kernel
+KERNEL_DEFCONFIG := msm8226_caf_defconfig
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags androidboot.write_protect=0 zcache androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET := 0x02000000
 
 BOARD_EGL_CFG := device/motorola/falcon/egl.cfg
 
@@ -126,9 +127,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Enable suspend during charger mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
-
-# Add NON-HLOS files for ota upgrade
-ADD_RADIO_FILES ?= true
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
