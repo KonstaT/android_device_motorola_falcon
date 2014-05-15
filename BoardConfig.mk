@@ -112,7 +112,11 @@ PROTOBUF_SUPPORTED := true
 TARGET_USES_ION := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
+# Vendor init
+TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/motorola/falcon/init/init_falcon.c
+
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 
 #Add support for firmare upgrade on 8226
