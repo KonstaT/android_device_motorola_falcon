@@ -1,6 +1,3 @@
-#
-# system.prop for falcon
-#
 
 # Use reference RIL for initial bringup
 #rild.libpath=/system/lib/libreference-ril.so
@@ -118,3 +115,39 @@ use.voice.path.for.pcm.voip=true
 
 #enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
+
+# Audio
+ro.qc.sdk.audio.fluencetype=fluence
+ro.audio.fm_max_volume=4096
+
+# Bluetooth
+qcom.bt.le_dev_pwr_class=1
+
+# Display
+ro.sf.lcd_density=320
+
+# GPS
+persist.gps.qc_nlp_in_use=0
+
+# SSR
+persist.sys.ssr.restart_level=3
+persist.sys.qc.sub.rdump.on=1
+
+# Telephony
+persist.radio.mode_pref_nv10=1
+persist.radio.call_type=1
+persist.radio.no_wait_for_card=1
+persist.radio.dfr_mode_set=1
+ro.use_data_netmgrd=true
+
+# USB
+persist.sys.usb.config=mtp,adb
+ro.usb.mtp=0x2e82
+ro.usb.mtp_adb=0x2e76
+ro.usb.ptp=0x2e83
+ro.usb.ptp_adb=0x2e84
+ro.usb.bpt=0x2e28
+ro.usb.bpt_adb=0x2e29
+ro.usb.bpteth=0x2e2a
+ro.usb.bpteth_adb=0x2e2b
+ro.qualcomm.cabl=0
