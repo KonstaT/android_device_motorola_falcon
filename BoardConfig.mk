@@ -32,17 +32,8 @@ TARGET_HAS_QC_KERNEL_SOURCE := true
 ifndef $(QCPATH)
 USE_CAMERA_STUB := false
 BOARD_USES_QCOM_HARDWARE := true
-BOARD_HAVE_BLUETOOTH := true
+
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
-
-ifeq ($(BOARD_HAVE_BLUETOOTH), true)
-   BOARD_HAVE_BLUETOOTH_BLUEZ := false
-ifneq ($(BOARD_HAVE_BLUETOOTH_BLUEZ), true)
-   BOARD_HAVE_BLUETOOTH_QCOM := true
-   QCOM_BT_USE_SMD_TTY := true
-endif # BOARD_HAVE_BLUETOOTH_BLUEZ
-endif # BOARD_HAVE_BLUETOOTH
-
 endif #QCPATH
 
 TARGET_NO_RPC := true
@@ -74,6 +65,12 @@ AUDIO_FEATURE_DISABLED_SSR := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := xt1031,xt1032,xt1033,xt1034,falcon_umts,falcon_umtsds,falcon_cdma,falcon_retuaws,falcon,falcon_gpe
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/falcon/bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+QCOM_BT_USE_SMD_TTY := true
 
 # Display
 BOARD_EGL_CFG := device/motorola/falcon/egl.cfg
