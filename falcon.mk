@@ -1,18 +1,6 @@
-TARGET_USES_QCOM_BSP := true
 
-ifeq ($(TARGET_USES_QCOM_BSP), true)
-# Add QC Video Enhancements flag
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-endif #TARGET_USES_QCOM_BSP
-
-#TARGET_DISABLE_DASH := true
-#TARGET_DISABLE_OMX_SECURE_TEST_APP := true
-
-# media_profiles and media_codecs xmls for 8226
-ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/motorola/falcon/media/media_profiles_8226.xml:system/etc/media_profiles.xml \
                       device/motorola/falcon/media/media_codecs_8226.xml:system/etc/media_codecs.xml
-endif
 
 $(call inherit-product, device/qcom/common/common.mk)
 $(call inherit-product-if-exists, vendor/motorola/falcon/falcon-vendor.mk)
