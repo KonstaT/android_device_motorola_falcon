@@ -75,6 +75,9 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_DISABLED_SSR := true
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := xt1031,xt1032,xt1033,xt1034,falcon_umts,falcon_umtsds,falcon_cdma,falcon_retuaws,falcon,falcon_gpe
+
 # Display
 BOARD_EGL_CFG := device/motorola/falcon/egl.cfg
 USE_OPENGL_RENDERER := true
