@@ -126,6 +126,9 @@ qcom.bt.le_dev_pwr_class=1
 # Display
 ro.sf.lcd_density=320
 
+# Gecko
+ro.moz.has_home_button=0
+
 # GPS
 persist.gps.qc_nlp_in_use=0
 
