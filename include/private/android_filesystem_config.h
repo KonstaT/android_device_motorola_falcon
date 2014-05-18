@@ -251,9 +251,9 @@ static const struct fs_path_config android_dirs[] = {
 ** and will allow partial matches.
 */
 static const struct fs_path_config android_files[] = {
-    { 00775, AID_ROOT,      AID_ROOT,      0, "system/b2g/b2g" },
-    { 00775, AID_ROOT,      AID_ROOT,      0, "system/b2g/updater" },
-    { 00775, AID_ROOT,      AID_ROOT,      0, "system/b2g/plugin-container" },
+    { 00755, AID_ROOT,      AID_ROOT,      0, "system/b2g/b2g" },
+    { 00755, AID_ROOT,      AID_ROOT,      0, "system/b2g/updater" },
+    { 00755, AID_ROOT,      AID_ROOT,      0, "system/b2g/plugin-container" },
     { 00440, AID_ROOT,      AID_SHELL,     0, "system/etc/init.goldfish.rc" },
     { 00550, AID_ROOT,      AID_SHELL,     0, "system/etc/init.goldfish.sh" },
     { 00440, AID_ROOT,      AID_SHELL,     0, "system/etc/init.trout.rc" },
