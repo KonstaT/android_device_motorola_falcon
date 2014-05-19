@@ -38,6 +38,10 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_SMD_TTY := true
 
+# Build
+TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/falcon
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+
 # Camera
 USE_CAMERA_STUB := true
 
@@ -91,7 +95,6 @@ TARGET_USES_QCOM_BSP := true
 TARGET_RECOVERY_FSTAB := device/motorola/falcon/ramdisk/fstab.qcom
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \

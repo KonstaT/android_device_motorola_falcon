@@ -123,6 +123,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.radio.dont_use_dsd", "true");
         property_set("persist.radio.plmn_name_cmp", "1");
+        property_set("ro.moz.ril.0.network_types", "gsm,wcdma");
+        property_set("ro.moz.ril.1.network_types", "gsm");
+        property_set("ro.moz.ril.numclients", "2");
     } else if (ISMATCH(radio, "0x6")) {
         /* xt1034 */
         property_set("ro.product.device", "falcon_umts");
