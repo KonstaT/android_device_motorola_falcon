@@ -2,11 +2,15 @@
 $(call inherit-product, device/qcom/common/common.mk)
 $(call inherit-product-if-exists, vendor/motorola/falcon/falcon-vendor.mk)
 
+# Device identifier
 PRODUCT_DEVICE := falcon
 PRODUCT_NAME := falcon
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto G
 PRODUCT_MANUFACTURER := motorola
+
+# Localization
+B2G_LANGUAGE_PACK := full
 
 # Audio
 PRODUCT_PACKAGES += \
