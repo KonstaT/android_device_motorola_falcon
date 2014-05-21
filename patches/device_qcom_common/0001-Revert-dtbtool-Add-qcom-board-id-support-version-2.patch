@@ -1,7 +1,7 @@
 From b910a9823d540f7c4d8a07e56384d420ea0b3bc1 Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Sat, 12 Apr 2014 14:08:22 +0300
-Subject: [PATCH 1/4] Revert "dtbtool: Add qcom,board-id support (version 2)"
+Subject: [PATCH 1/5] Revert "dtbtool: Add qcom,board-id support (version 2)"
 
 This reverts commit 30576c9006dd9a816087bb398a5979bd9023f9d8.
 ---

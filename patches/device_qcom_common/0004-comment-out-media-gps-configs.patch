@@ -1,7 +1,7 @@
 From 86b44e86fb18942a3ce1b1328a4bed7268fd308f Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Sat, 17 May 2014 18:16:45 +0300
-Subject: [PATCH 4/4] comment out media & gps configs
+Subject: [PATCH 4/5] comment out media & gps configs
 
 Or we'll get the wrong ones. Looks like my pretty device
 tree doesn't quite behave with caf build system. :(

@@ -1,7 +1,7 @@
 From 5bfd5300eb0e1cc18166bee6a49211516fb5debb Mon Sep 17 00:00:00 2001
 From: Emerson Pinter <dev@pinter.com.br>
 Date: Mon, 26 Nov 2012 21:48:12 -0200
-Subject: [PATCH 3/3] liblog: add required function
+Subject: [PATCH 3/4] liblog: add required function
 
 Some Motorola proprietaries require a function named __android_log_loggable. This
 change adds the function and solves problems with radio and other

@@ -1,7 +1,7 @@
-From 477e3575d5a0be61e728d14711cca0097123308e Mon Sep 17 00:00:00 2001
+From 0d23385a861788029df52cd85233912c00538b39 Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Sat, 17 May 2014 10:10:44 +0300
-Subject: [PATCH] don't copy bootanimation
+Subject: [PATCH 1/2] don't copy bootanimation
 
 Change-Id: Id0212994ec0e7b48414187badb35c58d8afba3ca
 ---

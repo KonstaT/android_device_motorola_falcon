@@ -1,7 +1,7 @@
 From 60dabe1858935127c150e8a9fe32f85c728aa142 Mon Sep 17 00:00:00 2001
 From: Mike Kasick <mike@kasick.org>
 Date: Thu, 25 Oct 2012 22:08:55 -0400
-Subject: [PATCH 2/3] init: Allow device-specific appends to the property
+Subject: [PATCH 2/4] init: Allow device-specific appends to the property
  service permission structs
 
 Extends device_perms.h API to allow property_perms and control_perms to be

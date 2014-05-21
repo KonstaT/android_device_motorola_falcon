@@ -1,7 +1,7 @@
 From 346b08f7b26820dc9460d088907b34eee3dd9252 Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Sat, 17 May 2014 17:56:31 +0300
-Subject: [PATCH 3/4] support emulated internal sdcard
+Subject: [PATCH 3/5] support emulated internal sdcard
 
 And remove internal sdcard.
 
