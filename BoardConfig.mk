@@ -85,6 +85,7 @@ USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Hardware tunables framework
 BOARD_HARDWARE_CLASS := device/motorola/falcon/cmhw/
