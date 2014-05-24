@@ -1,0 +1,29 @@
+From 1d09e85131535f2d3268a68cbf2b16f86d501cf8 Mon Sep 17 00:00:00 2001
+From: Konsta <konsta09@gmail.com>
+Date: Fri, 23 May 2014 18:55:58 +0300
+Subject: [PATCH] dsds: start second rilproxy service on dual-sim
+
+Change-Id: Iad7053cae5b59d99b9394b456e2a7c96e08ed102
+---
+ rootdir/etc/init.class_main.sh |    3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/rootdir/etc/init.class_main.sh b/rootdir/etc/init.class_main.sh
+index b95b754..8dc4e88 100755
+--- a/rootdir/etc/init.class_main.sh
++++ b/rootdir/etc/init.class_main.sh
+@@ -61,8 +61,11 @@ case "$baseband" in
+ 
+     if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
+         stop ril-daemon
++        stop rilproxy
+         start ril-daemon
+         start ril-daemon1
++        start rilproxy
++        start rilproxy1
+     elif [ "$multisim" = "tsts" ]; then
+         stop ril-daemon
+         start ril-daemon
+-- 
+1.7.9.5
+
