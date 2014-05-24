@@ -101,8 +101,5 @@ ro.telephony.call_ring.multiple=false
 # Time services
 persist.timed.enable=true
 
-# Webkit
-persist.webview.provider=chromium
-
 # Wifi
 wifi.interface=wlan0
