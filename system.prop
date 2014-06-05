@@ -128,6 +128,8 @@ ro.sf.lcd_density=320
 
 # Gecko
 ro.moz.has_home_button=0
+ro.moz.cam.0.sensor_offset=0
+ro.moz.cam.1.sensor_offset=0
 
 # GPS
 persist.gps.qc_nlp_in_use=0
