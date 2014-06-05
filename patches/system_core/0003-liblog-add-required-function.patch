@@ -1,7 +1,7 @@
-From 5bfd5300eb0e1cc18166bee6a49211516fb5debb Mon Sep 17 00:00:00 2001
+From 5c80b93fa3c6529fd9b15c7efe9014c528dad88e Mon Sep 17 00:00:00 2001
 From: Emerson Pinter <dev@pinter.com.br>
 Date: Mon, 26 Nov 2012 21:48:12 -0200
-Subject: [PATCH 3/4] liblog: add required function
+Subject: [PATCH 3/5] liblog: add required function
 
 Some Motorola proprietaries require a function named __android_log_loggable. This
 change adds the function and solves problems with radio and other
@@ -40,7 +40,7 @@ index 6bfb119..19f880b 100644
  LOCAL_WHOLE_STATIC_LIBRARIES := liblog
  include $(BUILD_SHARED_LIBRARY)
 diff --git a/liblog/logd_write.c b/liblog/logd_write.c
-index fff7cc4..662407f 100644
+index b47a8f8..30a0906 100644
 --- a/liblog/logd_write.c
 +++ b/liblog/logd_write.c
 @@ -27,6 +27,12 @@

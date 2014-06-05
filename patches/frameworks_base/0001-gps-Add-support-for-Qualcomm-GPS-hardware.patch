@@ -1,4 +1,4 @@
-From e8f723bcf9ee35ee75259eb63f73438a60ccfe49 Mon Sep 17 00:00:00 2001
+From 7fdcc0f41344bab41ba05b989fc242da4f843421 Mon Sep 17 00:00:00 2001
 From: Steve Kondik <shade@chemlab.org>
 Date: Thu, 6 Dec 2012 11:28:15 -0800
 Subject: [PATCH] gps: Add support for Qualcomm GPS hardware

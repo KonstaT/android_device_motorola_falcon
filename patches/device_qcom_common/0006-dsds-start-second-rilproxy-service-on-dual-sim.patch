@@ -1,7 +1,7 @@
-From 1d09e85131535f2d3268a68cbf2b16f86d501cf8 Mon Sep 17 00:00:00 2001
+From cea876d123d9c53daa082317dffe52462e944cf5 Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Fri, 23 May 2014 18:55:58 +0300
-Subject: [PATCH] dsds: start second rilproxy service on dual-sim
+Subject: [PATCH 6/6] dsds: start second rilproxy service on dual-sim
 
 Change-Id: Iad7053cae5b59d99b9394b456e2a7c96e08ed102
 ---

@@ -1,4 +1,4 @@
-From 0d23385a861788029df52cd85233912c00538b39 Mon Sep 17 00:00:00 2001
+From c66fdbcf8b3b7c3d7e75e654f7325252ee6c7006 Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Sat, 17 May 2014 10:10:44 +0300
 Subject: [PATCH 1/2] don't copy bootanimation
@@ -9,7 +9,7 @@ Change-Id: Id0212994ec0e7b48414187badb35c58d8afba3ca
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/b2g_product.mk b/b2g_product.mk
-index 583e91a..4ef1bcc 100644
+index d3e55cf..b7602a0 100644
 --- a/b2g_product.mk
 +++ b/b2g_product.mk
 @@ -25,7 +25,7 @@

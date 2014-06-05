@@ -1,7 +1,7 @@
-From 89a5ba9ca84d73ad806df82e13ba2f9157f02bf2 Mon Sep 17 00:00:00 2001
+From 2cc382b4bbbf3face9b6f7eb8ec84240c25972da Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Fri, 18 Apr 2014 19:21:34 +0300
-Subject: [PATCH 8/9] don't copy tts data
+Subject: [PATCH 9/9] don't copy tts data
 
 Change-Id: Ic647b3308aa4e96347d29a7b4f87e8862b7cd7fd
 ---

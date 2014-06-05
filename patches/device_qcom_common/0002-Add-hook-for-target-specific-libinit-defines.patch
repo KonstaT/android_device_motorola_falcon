@@ -1,7 +1,7 @@
-From e24826630ef4f00841edb5d315e06a5452441548 Mon Sep 17 00:00:00 2001
+From bba497a9fb5f48045347739ac94cc596091d2a6a Mon Sep 17 00:00:00 2001
 From: dhacker29 <dhackerdvm@gmail.com>
 Date: Sat, 15 Feb 2014 02:55:16 +0100
-Subject: [PATCH 2/5] Add hook for target specific libinit defines
+Subject: [PATCH 2/6] Add hook for target specific libinit defines
 
 Set TARGET_LIBINIT_DEFINES_FILE := path to your file in BoardConfig
 

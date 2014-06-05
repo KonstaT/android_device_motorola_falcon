@@ -1,7 +1,7 @@
-From 96bea954e9416f786e40906a6dfdea09f46419db Mon Sep 17 00:00:00 2001
+From 250ff042f4e9446b0169a80584d873552bca058c Mon Sep 17 00:00:00 2001
 From: Ricardo Cerqueira <cyanogenmod@cerqueira.org>
 Date: Wed, 4 Jul 2012 15:26:57 +0100
-Subject: [PATCH 1/4] init: Add a mechanism to extend the property service in
+Subject: [PATCH 1/5] init: Add a mechanism to extend the property service in
  device configs
 
 Instead of every so often adding a new set of stuff here for a specific
@@ -51,7 +51,7 @@ index 0000000..504c0ab
 +};
 +*/
 diff --git a/init/property_service.c b/init/property_service.c
-index 2ce2e49..91e0412 100644
+index b844f67..92ff851 100644
 --- a/init/property_service.c
 +++ b/init/property_service.c
 @@ -68,6 +68,8 @@
@@ -71,8 +71,8 @@ index 2ce2e49..91e0412 100644
  struct {
      const char *prefix;
      unsigned int uid;
-@@ -123,11 +126,14 @@ struct {
- #endif // DOLBY_END
+@@ -124,11 +127,14 @@ struct {
+     { "usb_uicc.", AID_SYSTEM,  0 },
      { NULL, 0, 0 }
  };
 +/* Avoid extending this array. Check device_perms.h */
@@ -86,7 +86,7 @@ index 2ce2e49..91e0412 100644
  struct {
      const char *service;
      unsigned int uid;
-@@ -137,6 +143,8 @@ struct {
+@@ -138,6 +144,8 @@ struct {
      { "ril-daemon",AID_RADIO, AID_RADIO },
       {NULL, 0, 0 }
  };

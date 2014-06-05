@@ -1,7 +1,7 @@
-From 86b44e86fb18942a3ce1b1328a4bed7268fd308f Mon Sep 17 00:00:00 2001
+From a2f634ce2bc4ee02f3fb48ff8d42825e5a0cb656 Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Sat, 17 May 2014 18:16:45 +0300
-Subject: [PATCH 4/5] comment out media & gps configs
+Subject: [PATCH 4/6] comment out media & gps configs
 
 Or we'll get the wrong ones. Looks like my pretty device
 tree doesn't quite behave with caf build system. :(
@@ -12,7 +12,7 @@ Change-Id: I8e62f2a3044869f92f1d8807df85260deb107831
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/common.mk b/common.mk
-index 42d1bf6..9a8b37b 100644
+index d750488..54b0df9 100644
 --- a/common.mk
 +++ b/common.mk
 @@ -167,7 +167,7 @@ FM := qcom.fmradio
@@ -24,7 +24,7 @@ index 42d1bf6..9a8b37b 100644
  GPS_HARDWARE += gps.default
  GPS_HARDWARE += gps.mahimahi
  GPS_HARDWARE += libloc_adapter
-@@ -705,8 +705,8 @@ endif # BOARD_HAVE_BLUETOOTH_BLUEZ
+@@ -707,8 +707,8 @@ endif # BOARD_HAVE_BLUETOOTH_BLUEZ
  PRODUCT_COPY_FILES += \
      device/qcom/common/sec_config:system/etc/sec_config
  

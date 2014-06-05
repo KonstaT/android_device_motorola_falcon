@@ -1,7 +1,7 @@
-From 1fe5f6ac89ebf5648d397b876e19804d5f344118 Mon Sep 17 00:00:00 2001
+From f3069762719e1977b0c17d31677d92913a91876d Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Fri, 23 May 2014 18:56:30 +0300
-Subject: [PATCH] dsds: add second rilproxy service
+Subject: [PATCH 5/5] dsds: add second rilproxy service
 
 Change-Id: Idbc27b3a4fb44898f48e34d1be33923698a6dd62
 ---

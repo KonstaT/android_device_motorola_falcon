@@ -1,4 +1,4 @@
-From f3ebbda16bbc92a72559e062bb156fb93080fd33 Mon Sep 17 00:00:00 2001
+From f2056e43e85e25b57eb83ef46e84c739e068b28d Mon Sep 17 00:00:00 2001
 From: Shareef Ali <shareefalis@cyanogenmod.org>
 Date: Thu, 2 Jan 2014 19:11:57 -0600
 Subject: [PATCH] hal: add custom platform abstraction
@@ -6,16 +6,16 @@ Subject: [PATCH] hal: add custom platform abstraction
 Change-Id: I7ce4a1b05e8957b43581242ec7e6f21f0ad900aa
 ---
  hal/Android.mk                            |    9 ++++-
- hal/msm8974/platform.c                    |   54 ++++++++++-------------------
- hal/msm8974/platform.h                    |   35 +++++++++++++++++++
+ hal/msm8974/platform.c                    |   53 ++++++++++-------------------
+ hal/msm8974/platform.h                    |   37 ++++++++++++++++++++
  hal/vendor-platform/Custom-Platform_Api.h |   29 ++++++++++++++++
- hal/vendor-platform/customplatform.c      |   25 +++++++++++++
- 5 files changed, 116 insertions(+), 36 deletions(-)
+ hal/vendor-platform/customplatform.c      |   25 ++++++++++++++
+ 5 files changed, 117 insertions(+), 36 deletions(-)
  create mode 100644 hal/vendor-platform/Custom-Platform_Api.h
  create mode 100644 hal/vendor-platform/customplatform.c
 
 diff --git a/hal/Android.mk b/hal/Android.mk
-index 41f712c..94f2929 100644
+index d4862f2..83a4b09 100644
 --- a/hal/Android.mk
 +++ b/hal/Android.mk
 @@ -28,6 +28,12 @@ LOCAL_SRC_FILES := \
@@ -31,7 +31,7 @@ index 41f712c..94f2929 100644
  LOCAL_SRC_FILES += audio_extn/audio_extn.c
  
  ifneq ($(strip $(AUDIO_FEATURE_DISABLED_ANC_HEADSET)),true)
-@@ -123,7 +129,8 @@ LOCAL_C_INCLUDES += \
+@@ -127,7 +133,8 @@ LOCAL_C_INCLUDES += \
  	$(call include-path-for, audio-effects) \
  	$(LOCAL_PATH)/$(AUDIO_PLATFORM) \
  	$(LOCAL_PATH)/audio_extn \
@@ -39,13 +39,13 @@ index 41f712c..94f2929 100644
 +	$(LOCAL_PATH)/voice_extn \
 +	$(LOCAL_PATH)/vendor-platform
  
- ifeq ($(strip $(AUDIO_FEATURE_ENABLED_LISTEN)),true)
-     LOCAL_CFLAGS += -DAUDIO_LISTEN_ENABLED
+ ifneq ($(filter msm8974,$(AUDIO_PLATFORM)),)
+     LOCAL_C_INCLUDES += external/expat/lib
 diff --git a/hal/msm8974/platform.c b/hal/msm8974/platform.c
-index 52709ef..50cc8de 100644
+index 2f83b63..0118134 100644
 --- a/hal/msm8974/platform.c
 +++ b/hal/msm8974/platform.c
-@@ -73,9 +73,6 @@
+@@ -74,9 +74,6 @@
  #define RETRY_US 500000
  #define MAX_SND_CARD 8
  
@@ -55,7 +55,7 @@ index 52709ef..50cc8de 100644
  #define AUDIO_PARAMETER_KEY_FLUENCE_TYPE  "fluence"
  #define AUDIO_PARAMETER_KEY_BTSCO         "bt_samplerate"
  #define AUDIO_PARAMETER_KEY_SLOWTALK      "st_enable"
-@@ -92,35 +89,6 @@ struct audio_block_header
+@@ -93,36 +90,6 @@ struct audio_block_header
      int length;
  };
  
@@ -73,6 +73,7 @@ index 52709ef..50cc8de 100644
 -    bool fluence_in_voice_rec;
 -    bool fluence_in_audio_rec;
 -    int  fluence_type;
+-    char fluence_cap[PROPERTY_VALUE_MAX];
 -    int  btsco_sample_rate;
 -    bool slowtalk;
 -    /* Audio calibration related functions */
@@ -91,7 +92,7 @@ index 52709ef..50cc8de 100644
  static const int pcm_device_table[AUDIO_USECASE_MAX][2] = {
      [USECASE_AUDIO_PLAYBACK_DEEP_BUFFER] = {DEEP_BUFFER_PCM_DEVICE,
                                              DEEP_BUFFER_PCM_DEVICE},
-@@ -166,7 +134,7 @@ static const int pcm_device_table[AUDIO_USECASE_MAX][2] = {
+@@ -168,7 +135,7 @@ static const int pcm_device_table[AUDIO_USECASE_MAX][2] = {
  };
  
  /* Array to store sound devices */
@@ -100,16 +101,7 @@ index 52709ef..50cc8de 100644
      [SND_DEVICE_NONE] = "none",
      /* Playback sound devices */
      [SND_DEVICE_OUT_HANDSET] = "handset",
-@@ -241,7 +209,7 @@ static const char * const device_table[SND_DEVICE_MAX] = {
- };
- 
- /* ACDB IDs (audio DSP path configuration IDs) for each sound device */
--static const int acdb_device_table[SND_DEVICE_MAX] = {
-+static int acdb_device_table[SND_DEVICE_MAX] = {
-     [SND_DEVICE_NONE] = -1,
-     [SND_DEVICE_OUT_HANDSET] = 7,
-     [SND_DEVICE_OUT_SPEAKER] = 14,
-@@ -316,7 +284,7 @@ static const int acdb_device_table[SND_DEVICE_MAX] = {
+@@ -318,7 +285,7 @@ static int acdb_device_table[SND_DEVICE_MAX] = {
  #define DEEP_BUFFER_PLATFORM_DELAY (29*1000LL)
  #define LOW_LATENCY_PLATFORM_DELAY (13*1000LL)
  
@@ -118,7 +110,7 @@ index 52709ef..50cc8de 100644
  {
      struct mixer_ctl *ctl;
      const char *mixer_ctl_name = "EC_REF_RX";
-@@ -457,6 +425,7 @@ void close_csd_client(struct csd_data *csd)
+@@ -459,6 +426,7 @@ void close_csd_client(struct csd_data *csd)
  
  void *platform_init(struct audio_device *adev)
  {
@@ -126,7 +118,7 @@ index 52709ef..50cc8de 100644
      char platform[PROPERTY_VALUE_MAX];
      char baseband[PROPERTY_VALUE_MAX];
      char value[PROPERTY_VALUE_MAX];
-@@ -1018,6 +987,11 @@ exit:
+@@ -1096,6 +1064,11 @@ exit:
  
  snd_device_t platform_get_input_snd_device(void *platform, audio_devices_t out_device)
  {
@@ -138,7 +130,7 @@ index 52709ef..50cc8de 100644
      struct platform_data *my_data = (struct platform_data *)platform;
      struct audio_device *adev = my_data->adev;
      audio_source_t  source = (adev->active_input == NULL) ?
-@@ -1669,3 +1643,13 @@ uint32_t platform_get_pcm_offload_buffer_size(audio_offload_info_t* info)
+@@ -1731,3 +1704,13 @@ uint32_t platform_get_pcm_offload_buffer_size(audio_offload_info_t* info)
      return fragment_size;
  }
  
@@ -153,18 +145,19 @@ index 52709ef..50cc8de 100644
 +    //ALOGE("%s: shareefdebug :%s", "device_table[key]", device_table[key]);
 +}
 diff --git a/hal/msm8974/platform.h b/hal/msm8974/platform.h
-index c911913..3fb5562 100644
+index 7ade575..960baa2 100755
 --- a/hal/msm8974/platform.h
 +++ b/hal/msm8974/platform.h
-@@ -19,6 +19,7 @@
+@@ -19,6 +19,8 @@
  
  #ifndef QCOM_AUDIO_PLATFORM_H
  #define QCOM_AUDIO_PLATFORM_H
 +#include "vendor-platform/Custom-Platform_Api.h"
++#include <cutils/properties.h>
  
  enum {
      FLUENCE_NONE,
-@@ -255,5 +256,39 @@ struct csd_data {
+@@ -263,5 +265,40 @@ struct csd_data {
      start_record_t start_record;
      stop_record_t stop_record;
  };
@@ -184,6 +177,7 @@ index c911913..3fb5562 100644
 +    bool fluence_in_voice_rec;
 +    bool fluence_in_audio_rec;
 +    int  fluence_type;
++    char fluence_cap[PROPERTY_VALUE_MAX];
 +    int  btsco_sample_rate;
 +    bool slowtalk;
 +    /* Audio calibration related functions */

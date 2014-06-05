@@ -1,7 +1,7 @@
-From 00ae898c53af6e3e8e7660f736c7e078547c465b Mon Sep 17 00:00:00 2001
+From 58550fe246631089e811957fdd0d6e28d3e6cbed Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Tue, 20 May 2014 17:54:58 +0300
-Subject: [PATCH 5/5] run syspart fixup and reduce wifi logging
+Subject: [PATCH 5/6] run syspart fixup and reduce wifi logging
 
 Sync audio/wifi init scripts with stock.
 
@@ -59,7 +59,7 @@ index cbfe9ff..0b71094 100644
  exit 0
  
 diff --git a/rootdir/etc/init.qcom.rc b/rootdir/etc/init.qcom.rc
-index aad07a4..9f8598c 100644
+index 4f13285..7f8fdee 100644
 --- a/rootdir/etc/init.qcom.rc
 +++ b/rootdir/etc/init.qcom.rc
 @@ -56,6 +56,7 @@ on early-boot
@@ -70,7 +70,7 @@ index aad07a4..9f8598c 100644
      write /sys/kernel/boot_adsp/boot 1
  
  on boot
-@@ -480,7 +481,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
+@@ -495,7 +496,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
      -I/system/etc/wifi/p2p_supplicant_overlay.conf -N \
      -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
      -I/system/etc/wifi/wpa_supplicant_overlay.conf \
@@ -79,7 +79,7 @@ index aad07a4..9f8598c 100644
      -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
  #   we will start as root and wpa_supplicant will switch to user wifi
  #   after setting up the capabilities required for WEXT
-@@ -494,7 +495,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
+@@ -509,7 +510,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
  service wpa_supplicant /system/bin/wpa_supplicant \
      -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
      -I/system/etc/wifi/wpa_supplicant_overlay.conf \
@@ -88,7 +88,7 @@ index aad07a4..9f8598c 100644
      -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
      #   we will start as root and wpa_supplicant will switch to user wifi
      #   after setting up the capabilities required for WEXT
-@@ -664,7 +665,7 @@ service atfwd /system/bin/ATFWD-daemon
+@@ -679,7 +680,7 @@ service atfwd /system/bin/ATFWD-daemon
      user system
      group system radio
  

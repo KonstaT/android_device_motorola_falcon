@@ -1,7 +1,7 @@
-From 7dcddbefd922f27a69d6a4e7f1bc886ead5027f5 Mon Sep 17 00:00:00 2001
+From 84ec20af79b2ecc85858d34ad5e5bab1acef3b89 Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Sun, 18 May 2014 18:55:56 +0300
-Subject: [PATCH 4/4] use rilproxy as service
+Subject: [PATCH 4/5] use rilproxy as service
 
 * underp b2g permissions
 * don't symlink rilproxy to rild
