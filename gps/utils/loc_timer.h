@@ -1,4 +1,4 @@
-/* Copyright (c) 2011, Code Aurora Forum. All rights reserved.
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -9,7 +9,7 @@
  *       copyright notice, this list of conditions and the following
  *       disclaimer in the documentation and/or other materials provided
  *       with the distribution.
- *     * Neither the name of Code Aurora Forum, Inc. nor the names of its
+ *     * Neither the name of The Linux Foundation, nor the names of its
  *       contributors may be used to endorse or promote products derived
  *       from this software without specific prior written permission.
  *
@@ -27,33 +27,37 @@
  *
  */
 
-#ifndef ULP_H
-#define ULP_H
+#ifndef __LOC_DELAY_H__
+#define __LOC_DELAY_H__
 
 #ifdef __cplusplus
-extern "C"
-{
-#endif
+extern "C" {
+#endif /* __cplusplus */
+#include<pthread.h>
+#include "log_util.h"
 
-#include <hardware/gps.h>
-#include "loc_eng.h"
+/*
+  Return values:
+  Success = 0
+  Failure = Non zero
+*/
+typedef void(*loc_timer_callback)(void *user_data, int result);
 
-/** Represents the standard ulp module interface. */
-typedef struct {
-    /** set to sizeof(ulpInterface) */
-    size_t   size;
 
-    /**
-     * Starts the libulp module. 0: success
-     */
-    int   (*init)(loc_eng_data_s_type &loc_eng_data);
+/*
+  Returns the handle, which can be used to stop the timer
+*/
+void* loc_timer_start(unsigned int delay_msec,
+                      loc_timer_callback,
+                      void* user_data);
 
-}ulpInterface;
-
-typedef const ulpInterface* (get_ulp_interface) (void);
+/*
+  handle becomes invalid upon the return of the callback
+*/
+void loc_timer_stop(void* handle);
 
 #ifdef __cplusplus
 }
-#endif
-#endif /* ULP_H */
+#endif /* __cplusplus */
 
+#endif //__LOC_DELAY_H__

@@ -76,9 +76,6 @@ TARGET_SYSTEMIMAGE_USE_SQUISHER := true
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# GPS
-BOARD_HAVE_NEW_QC_GPS := true
-
 # Graphics
 TARGET_QCOM_DISPLAY_VARIANT := caf-new
 BOARD_EGL_CFG := device/motorola/falcon/prebuilt/system/lib/egl/egl.cfg
