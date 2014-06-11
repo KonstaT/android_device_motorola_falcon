@@ -25,7 +25,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_policy.msm8226 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -33,7 +32,11 @@ PRODUCT_PACKAGES += \
     libaudioparameter \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing
+    libqcomvoiceprocessing \
+    tinycap \
+    tinymix \
+    tinypcminfo \
+    tinyplay
 
 # Charger
 PRODUCT_PACKAGES += \

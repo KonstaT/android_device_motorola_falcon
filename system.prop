@@ -6,11 +6,21 @@ persist.audio.fluence.speaker=true
 use.voice.path.for.pcm.voip=true
 use.dedicated.device.for.voip=true
 audio.offload.buffer.size.kb=32
-audio.offload.gapless.enabled=true
+audio.offload.gapless.enabled=false
+av.offload.enable=false
+av.streaming.offload.enable=false
+audio.offload.pcm.enable=false
 lpa.decode=true
 tunnel.audio.encode=true
 qcom.hw.aac.encoder=true
 ro.audio.fm_max_volume=4096
+persist.audio.calfile0=/etc/Bluetooth_cal.acdb
+persist.audio.calfile1=/etc/General_cal.acdb
+persist.audio.calfile2=/etc/Global_cal.acdb
+persist.audio.calfile3=/etc/Handset_cal.acdb
+persist.audio.calfile4=/etc/Hdmi_cal.acdb
+persist.audio.calfile5=/etc/Headset_cal.acdb
+persist.audio.calfile6=/etc/Speaker_cal.acdb
 
 # Bluetooth
 ro.qualcomm.bt.hci_transport=smd
