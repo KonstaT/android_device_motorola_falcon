@@ -4,7 +4,6 @@
         fetch="git://github.com/" />
 
     <remove-project name="kernel/msm" />
-    <remove-project name="platform/vendor/qcom-opensource/wlan/prima" />
 
     <!-- Moto G -->
     <project path="device/motorola/falcon" name="KonstaT/android_device_motorola_falcon" remote="github" revision="b2g_kk_3.5" />
@@ -17,6 +16,4 @@
     <!-- BusyBox -->
     <project path="external/busybox" name="CyanogenMod/android_external_busybox" remote="github" revision="2955fd17ef950705005d1a69b59d192e728a1bb1" />
 
-    <!-- Prima - use older version for now -->
-    <project name="platform/vendor/qcom-opensource/wlan/prima" path="vendor/qcom/opensource/wlan/prima" revision="c8999361075cb58d16ef45bb26f192989f753f4a"/>
 </manifest>
