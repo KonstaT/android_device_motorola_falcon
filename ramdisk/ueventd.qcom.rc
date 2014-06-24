@@ -144,6 +144,7 @@
 /dev/sdio_tty_ciq_00      0660   system     system
 /dev/tty_sdio_00          0660   system     system
 /dev/ttyGS0               0660   system     system
+/dev/voice_svc            0660   system     audio
 
 # DVB devices
 /dev/dvb/adapter0/demux*  0440   media       media
@@ -186,6 +187,7 @@
 /dev/msm_acdb             0660   system     audio
 
 # I2C
+/dev/i2c-0                0660   root       system
 /dev/i2c-1                0660   root       system
 /dev/i2c-2                0660   root       system
 /dev/i2c-3                0660   root       system
