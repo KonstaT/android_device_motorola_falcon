@@ -22,6 +22,16 @@ vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libsc-a3xx.so
 
+# ADSP
+bin/adsprpcd
+vendor/lib/libadsprpc.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
+vendor/lib/rfsa/adsp/libadsp_denoise_skel.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+
 # Audio
 bin/ap_gain.bin
 bin/ap_gain_mmul.bin
@@ -32,25 +42,33 @@ etc/Handset_cal.acdb
 etc/Hdmi_cal.acdb
 etc/Headset_cal.acdb
 etc/Speaker_cal.acdb
+lib/hw/audio_policy.msm8226.so
 lib/hw/audio.primary.msm8226.so
+lib/libmotaudioutils.so
 vendor/lib/libacdbloader.so
-vendor/lib/libacdbloader.so:lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
+vendor/lib/liblisten.so
+vendor/lib/liblistenhardware.so
+vendor/lib/liblistenjni.so
+vendor/lib/liblistensoundmodel.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
 
 # Battery & charger
 bin/batt_health
 bin/charge_only_mode
+bin/hvdcp
 bin/moto_com.sh
 
 # Bluetooth
+bin/btnvtool
 bin/hci_qcomm_init
-bin/sapd
+vendor/lib/libbtnv.so
 
 # Camera
-bin/adsprpcd
-bin/mm-pp-daemon
 bin/mm-qcamera-daemon
 lib/hw/camera.msm8226.so
 lib/libchromatix_ar0543_common.so
@@ -62,12 +80,9 @@ lib/libmm-qcamera.so
 lib/libmmcamera_ar0543.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
-lib/libmot_sensorlistener.so
 lib/libqomx_core.so
-vendor/lib/libadsprpc.so
-vendor/lib/libfastcvopt.so
-vendor/lib/libmm-abl.so
-vendor/lib/libmm-abl-oem.so
+vendor/lib/libjpegdhw.so
+vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -92,7 +107,11 @@ vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/liboemcamera.so
 vendor/lib/libqomx_jpegenc.so
-vendor/lib/libsensor1.so
+
+# Camera firmware
+etc/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw
 
 # Color convertor
 vendor/lib/libI420colorconvert.so
@@ -115,26 +134,26 @@ vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
 
-# Firmware
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/synaptics-s2316-13091704-175833-falcon.tdat
-etc/firmware/venus.b00
-etc/firmware/venus.b01
-etc/firmware/venus.b02
-etc/firmware/venus.b03
-etc/firmware/venus.b04
-etc/firmware/venus.mbn
-etc/firmware/venus.mdt
-
 # FM radio
 bin/fmconfig
 bin/fm_qsoc_patches
 
 # GPS
+-app/com.qualcomm.location.apk
+bin/gsiff_daemon
+bin/quipc_igsn
+bin/quipc_main
+etc/permissions/com.qualcomm.location.xml
 lib/libloc_api_v02.so
-vendor/lib/libgeofence.so:lib/libgeofence.so
+lib/libloc_ds_api.so
+vendor/lib/hw/flp.default.so
+vendor/lib/libgeofence.so
+vendor/lib/libizat_core.so
+vendor/lib/liblbs_core.so
+vendor/lib/liblocationservice.so
+vendor/lib/libquipc_os_api.so
+vendor/lib/libquipc_ulp_adapter.so
+vendor/lib/libulp2.so
 
 # Keystore
 vendor/firmware/keymaster/keymaster.b00
@@ -142,6 +161,14 @@ vendor/firmware/keymaster/keymaster.b01
 vendor/firmware/keymaster/keymaster.b02
 vendor/firmware/keymaster/keymaster.b03
 vendor/firmware/keymaster/keymaster.mdt
+
+# Misc
+vendor/lib/libxml.so
+
+# Motorola
+bin/dbvc_atvc_property_set
+bin/hardware_revisions.sh
+bin/refuse
 
 # OMX
 vendor/lib/libDivxDrm.so
@@ -155,25 +182,18 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 
-# Qcril
-etc/permissions/qcnvitems.xml
-etc/permissions/qcrilhook.xml
-framework/qcnvitems.jar
-framework/qcrilhook.jar
+# Postprocessing
+bin/mm-pp-daemon
+vendor/lib/libmm-abl.so
+vendor/lib/libmm-abl-oem.so
 
-# RIL & misc
+# Qualcomm framework
 bin/irsc_util
-bin/netmgrd
-bin/qmuxd
-bin/rmt_storage
-lib/libmdmcutback.so
-lib/libmotext_inf.so
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsnetutils.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
-vendor/lib/libnetmgr.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqc-opt.so
 vendor/lib/libqdi.so
@@ -185,32 +205,58 @@ vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
+
+# RIL
+-app/qcrilmsgtunnel.apk
+bin/netmgrd
+bin/qmuxd
+bin/rmt_storage
+bin/qmi_motext_hook
+etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml
+-framework/qcnvitems.jar
+-framework/qcrilhook.jar
+lib/libadropbox.so
+lib/libmdmcutback.so
+lib/libmotext_inf.so
+lib/libqmimotext.so
+lib/libqsap_sdk.so
+vendor/lib/libnetmgr.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
 
-# Motorola
-bin/dbvc_atvc_property_set
-bin/hardware_revisions.sh
-bin/refuse
-
 # Sensors
 bin/akmd8963
+etc/sensor_def_qcomdev.conf
 lib/hw/sensors.msm8226.so
+lib/libmot_sensorlistener.so
+vendor/lib/libsensor1.so
 
-# SSR
-bin/subsystem_ramdump
-lib/libadropbox.so
+# Touchscreen firmware
+etc/firmware/aps-Falc-01210000-0121-falcon.tdat
+etc/firmware/synaptics-s2316-13091704-175833-falcon.tdat
 
 # Thermal & mpdecision
 bin/mpdecision
 bin/thermal-engine
 vendor/lib/libthermalclient.so
+vendor/lib/libthermalioctl.so
 
 # Time services
+-app/TimeService.apk
 bin/time_daemon
-vendor/lib/libtime_genoff.so
+-vendor/lib/libtime_genoff.so
+vendor/lib/libTimeService.so
+
+# Venus firmware
+etc/firmware/venus.b00
+etc/firmware/venus.b01
+etc/firmware/venus.b02
+etc/firmware/venus.b03
+etc/firmware/venus.b04
+etc/firmware/venus.mbn
+etc/firmware/venus.mdt
 
 # XT1033
-xt1033/lib/hw/audio.primary.msm8226.so
+xt1033/bin/rild
 xt1033/lib/libril.so
-xt1033/vendor/lib/libril-qc-qmi-1.so
