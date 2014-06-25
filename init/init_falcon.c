@@ -75,8 +75,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* xt1032 */
         property_set("ro.product.device", "falcon_umts");
         property_set("ro.product.model", "Moto G");
-        property_set("ro.build.description", "falcon_retgb-user 4.4.2 KLB20.9-1.10-1.9 5 release-keys");
-        property_set("ro.build.fingerprint", "motorola/falcon_retgb/falcon_umts:4.4.2/KLB20.9-1.10-1.9/5:user/release-keys");
+        property_set("ro.build.description", "falcon_retuglb-user 4.4.3 KXB21.14-L1.32 33 release-keys");
+        property_set("ro.build.fingerprint", "motorola/falcon_retuglb/falcon_umts:4.4.3/KXB21.14-L1.32/33:user/release-keys");
         property_set("ro.mot.build.customerid", "RTGB");
         property_set("persist.radio.multisim.config", "");
     } else if (ISMATCH(radio, "0x3")) {
