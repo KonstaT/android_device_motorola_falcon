@@ -43,6 +43,13 @@ PRODUCT_PACKAGES += \
     charger \
     charger_res_images
 
+# Crda
+PRODUCT_PACKAGES += \
+    crda \
+    linville.key.pub.pem \
+    regdbdump \
+    regulatory.bin
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8226\
@@ -52,6 +59,12 @@ PRODUCT_PACKAGES += \
     libmemalloc \
     liboverlay \
     libqdutils
+
+# Ebtables
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libebtc
 
 # Filesystem tools
 PRODUCT_PACKAGES += \
