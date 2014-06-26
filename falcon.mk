@@ -80,6 +80,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.MSM8226
 
+# Misc
+PRODUCT_PACKAGES += \
+    libxml2
+
 # OMX
 PRODUCT_PACKAGES += \
     libdashplayer \
