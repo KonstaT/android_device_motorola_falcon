@@ -84,6 +84,8 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Hardware tunables framework
 BOARD_HARDWARE_CLASS := device/motorola/falcon/cmhw/
