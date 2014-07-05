@@ -210,6 +210,7 @@ vendor/lib/libqmiservices.so
 -app/qcrilmsgtunnel.apk
 bin/netmgrd
 bin/qmuxd
+bin/rild
 bin/rmt_storage
 bin/qmi_motext_hook
 etc/permissions/qcnvitems.xml
@@ -221,6 +222,7 @@ lib/libmdmcutback.so
 lib/libmotext_inf.so
 lib/libqmimotext.so
 lib/libqsap_sdk.so
+lib/libril.so
 vendor/lib/libnetmgr.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
