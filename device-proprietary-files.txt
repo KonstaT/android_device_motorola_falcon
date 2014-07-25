@@ -45,6 +45,7 @@ etc/Speaker_cal.acdb
 lib/hw/audio_policy.msm8226.so
 lib/hw/audio.primary.msm8226.so
 lib/libmotaudioutils.so
+lib/libtinyalsa.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
@@ -99,13 +100,13 @@ vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hdr_lib.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_mt9m114.so
-vendor/lib/libmmcamera_sp1628.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/liboemcamera.so
+vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 
 # Camera firmware
