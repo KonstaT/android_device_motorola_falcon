@@ -26,14 +26,9 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    libaudioparameter \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing \
-    tinycap \
-    tinymix \
-    tinypcminfo \
-    tinyplay
+    libqcomvoiceprocessing
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -53,9 +48,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8226 \
     hwcomposer.msm8226 \
     memtrack.msm8226 \
-    libmemalloc \
-    liboverlay \
-    libqdutils
+    liboverlay
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -65,9 +58,9 @@ PRODUCT_PACKAGES += \
 
 # Filesystem tools
 PRODUCT_PACKAGES += \
-    mkfs.f2fs \
-    fsck.f2fs \
     fibmap.f2fs \
+    fsck.f2fs \
+    mkfs.f2fs \
     resize2fs \
     setup_fs
 
