@@ -117,8 +117,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* xt1033 */
         property_set("ro.product.device", "falcon_umtsds");
         property_set("ro.product.model", "Moto G");
-        property_set("ro.build.description", "falcon_retbr_ds-user 4.4.3 KXB21.14-L1.32 30 release-keys");
-        property_set("ro.build.fingerprint", "motorola/falcon_retbr_ds/falcon_umtsds:4.4.3/KXB21.14-L1.32/30:user/release-keys");
+        property_set("ro.build.description", "falcon_asia_ds-user 4.4.4 KXB21.14-L1.40 34 release-keys");
+        property_set("ro.build.fingerprint", "motorola/falcon_asia_ds/falcon_umtsds:4.4.4/KXB21.14-L1.40/34:user/release-keys");
         property_set("ro.mot.build.customerid", "RETBR");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.radio.dont_use_dsd", "true");
