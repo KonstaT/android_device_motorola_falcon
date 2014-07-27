@@ -22,6 +22,8 @@ DEVICE_PACKAGE_OVERLAYS += device/motorola/falcon/overlay
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio_policy.msm8226 \
+    audio.primary.msm8226 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
