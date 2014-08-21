@@ -83,7 +83,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.MSM8226
+    lights.msm8226
 
 # Misc
 PRODUCT_PACKAGES += \
