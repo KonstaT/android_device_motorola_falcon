@@ -17,16 +17,18 @@ vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libOpenCL.so
 vendor/lib/libOpenVG.so
-vendor/lib/libRSDriver_adreno.so
-vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so
+vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
+vendor/lib/libscale.so
 
 # ADSP
 bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
+vendor/lib/libscve.so
 vendor/lib/rfsa/adsp/libadsp_denoise_skel.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
@@ -67,10 +69,11 @@ lib/libchromatix_ar0543_default_video.so
 lib/libchromatix_ar0543_hfr_60.so
 lib/libchromatix_ar0543_preview.so
 lib/libchromatix_ar0543_snapshot.so
-lib/libmm-qcamera.so
 lib/libmmcamera_ar0543.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
+lib/libmm-qcamera.so
+lib/libmot_sensorlistener.so
 lib/libqomx_core.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
@@ -93,6 +96,7 @@ vendor/lib/libmmcamera_mt9m114.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
+vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/liboemcamera.so
@@ -121,6 +125,7 @@ vendor/lib/liboemcrypto.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
+vendor/lib/libStDrvInt.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
@@ -167,9 +172,6 @@ vendor/firmware/keymaster/keymaster.b02
 vendor/firmware/keymaster/keymaster.b03
 vendor/firmware/keymaster/keymaster.mdt
 
-# Misc
-vendor/lib/libxml.so
-
 # Motorola
 bin/dbvc_atvc_property_set
 bin/hardware_revisions.sh
@@ -187,10 +189,16 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 
+# Perf
+bin/mpdecision
+vendor/lib/libqc-opt.so
+
 # Postprocessing
 bin/mm-pp-daemon
+vendor/lib/libdisp-aba.so
 vendor/lib/libmm-abl.so
 vendor/lib/libmm-abl-oem.so
+vendor/lib/libsensor1.so
 
 # Qualcomm framework
 bin/irsc_util
@@ -200,7 +208,6 @@ vendor/lib/libdsnetutils.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
-vendor/lib/libqc-opt.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
 vendor/lib/libqmi.so
@@ -208,6 +215,7 @@ vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_csvt_srvc.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
@@ -215,6 +223,7 @@ vendor/lib/libqmiservices.so
 -app/qcrilmsgtunnel.apk
 bin/netmgrd
 bin/qmuxd
+bin/rfs_access
 bin/rild
 bin/rmt_storage
 bin/qmi_motext_hook
@@ -234,17 +243,13 @@ vendor/lib/libril-qcril-hook-oem.so
 
 # Sensors
 bin/akmd8963
-etc/sensor_def_qcomdev.conf
 lib/hw/sensors.msm8226.so
-lib/libmot_sensorlistener.so
-vendor/lib/libsensor1.so
 
 # Touchscreen firmware
 etc/firmware/aps-Falc-01210000-0121-falcon.tdat
 etc/firmware/synaptics-s2316-13091704-175833-falcon.tdat
 
-# Thermal & mpdecision
-bin/mpdecision
+# Thermal
 bin/thermal-engine
 vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
@@ -263,3 +268,6 @@ etc/firmware/venus.b03
 etc/firmware/venus.b04
 etc/firmware/venus.mbn
 etc/firmware/venus.mdt
+
+# WiFi
+bin/ptt_socket_app
