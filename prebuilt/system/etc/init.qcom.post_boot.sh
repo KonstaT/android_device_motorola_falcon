@@ -338,12 +338,13 @@ esac
 case "$target" in
     "msm8226")
         echo 4 > /sys/module/lpm_levels/enable_low_power/l2
-	product=`getprop ro.boot.device`
-	if [ "$product" == "falcon" ]; then
-		if [ "$soc_revision" == "1.0" ]; then
-			echo 1 > /sys/kernel/debug/clk/cxo_lpm_clk/enable
-		fi
-	fi
+        soc_revision=`cat /sys/devices/soc0/revision`
+        product=`getprop ro.boot.device`
+        if [ "$product" == "falcon" ]; then
+            if [ "$soc_revision" == "1.0" ]; then
+                echo 1 > /sys/kernel/debug/clk/cxo_lpm_clk/enable
+            fi
+        fi
         echo 1 > /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled
         echo 1 > /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled
         echo 1 > /sys/module/msm_pm/modes/cpu2/power_collapse/suspend_enabled
@@ -603,4 +604,22 @@ case "$target" in
         echo 0,1,2,4,9,12 > /sys/module/lowmemorykiller/parameters/adj
         echo 5120 > /proc/sys/vm/min_free_kbytes
      ;;
+esac
+
+case "$target" in
+    "msm8226" | "msm8974" | "msm8610" | "apq8084" | "mpq8092" | "msm8610")
+        # Let kernel know our image version/variant/crm_version
+        image_version="10:"
+        image_version+=`getprop ro.build.id`
+        image_version+=":"
+        image_version+=`getprop ro.build.version.incremental`
+        image_variant=`getprop ro.product.name`
+        image_variant+="-"
+        image_variant+=`getprop ro.build.type`
+        oem_version=`getprop ro.build.version.codename`
+        echo 10 > /sys/devices/soc0/select_image
+        echo $image_version > /sys/devices/soc0/image_version
+        echo $image_variant > /sys/devices/soc0/image_variant
+        echo $oem_version > /sys/devices/soc0/image_crm_version
+        ;;
 esac
