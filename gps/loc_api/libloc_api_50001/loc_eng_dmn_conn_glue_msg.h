@@ -1,4 +1,4 @@
-/* Copyright (c) 2011-2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -9,7 +9,7 @@
  *       copyright notice, this list of conditions and the following
  *       disclaimer in the documentation and/or other materials provided
  *       with the distribution.
- *     * Neither the name of The Linux Foundation, nor the names of its
+ *     * Neither the name of The Linux Foundation nor the names of its
  *       contributors may be used to endorse or promote products derived
  *       from this software without specific prior written permission.
  *
@@ -26,43 +26,26 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-
-#ifndef LOC_LOG_H
-#define LOC_LOG_H
+#ifndef LOC_ENG_DMN_CONN_GLUE_MSG_H
+#define LOC_ENG_DMN_CONN_GLUE_MSG_H
 
 #ifdef __cplusplus
-extern "C"
-{
-#endif
+extern "C" {
+#endif /* __cplusplus */
 
-#include <ctype.h>
-#include "loc_target.h"
 
-typedef struct
-{
-   char                 name[128];
-   long                 val;
-} loc_name_val_s_type;
+#include <linux/types.h>
+#include "loc_eng_dmn_conn_glue_pipe.h"
 
-#define NAME_VAL(x) {"" #x "", x }
-
-#define UNKNOWN_STR "UNKNOWN"
-
-#define CHECK_MASK(type, value, mask_var, mask) \
-   ((mask_var & mask) ? (type) value : (type) (-1))
-
-/* Get names from value */
-const char* loc_get_name_from_mask(loc_name_val_s_type table[], int table_size, long mask);
-const char* loc_get_name_from_val(loc_name_val_s_type table[], int table_size, long value);
-const char* loc_get_msg_q_status(int status);
-const char* loc_get_target_name(unsigned int target);
-
-extern const char* log_succ_fail_string(int is_succ);
-
-extern char *loc_get_time(char *time_string, unsigned long buf_size);
+int loc_eng_dmn_conn_glue_msgget(const char * q_path, int mode);
+int loc_eng_dmn_conn_glue_msgremove(const char * q_path, int msgqid);
+int loc_eng_dmn_conn_glue_msgsnd(int msgqid, const void * msgp, size_t msgsz);
+int loc_eng_dmn_conn_glue_msgrcv(int msgqid, void *msgp, size_t msgsz);
+int loc_eng_dmn_conn_glue_msgflush(int msgqid);
+int loc_eng_dmn_conn_glue_msgunblock(int msgqid);
 
 #ifdef __cplusplus
 }
-#endif
+#endif /* __cplusplus */
 
-#endif /* LOC_LOG_H */
+#endif /* LOC_ENG_DMN_CONN_GLUE_MSG_H */
