@@ -9,9 +9,6 @@ PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto G
 PRODUCT_MANUFACTURER := motorola
 
-# Localization
-B2G_LANGUAGE_PACK := full
-
 # Audio
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
