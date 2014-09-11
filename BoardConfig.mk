@@ -31,9 +31,6 @@ AUDIO_FEATURE_DISABLED_SSR := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := xt1031,xt1032,xt1033,xt1034,falcon_umts,falcon_umtsds,falcon_cdma,falcon_retuaws,falcon,falcon_gpe
 
-# Bionic
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/falcon/bluetooth
 BOARD_HAVE_BLUETOOTH := true
