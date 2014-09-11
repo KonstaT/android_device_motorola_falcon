@@ -60,10 +60,6 @@ PRODUCT_PACKAGES += \
 
 # Filesystem tools
 PRODUCT_PACKAGES += \
-    fibmap.f2fs \
-    fsck.f2fs \
-    mkfs.f2fs \
-    resize2fs \
     setup_fs
 
 # FM radio
