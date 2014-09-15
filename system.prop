@@ -125,9 +125,10 @@ qcom.bt.le_dev_pwr_class=1
 ro.sf.lcd_density=320
 
 # Gecko
-ro.moz.has_home_button=0
 ro.moz.cam.0.sensor_offset=0
 ro.moz.cam.1.sensor_offset=0
+ro.moz.has_home_button=0
+ro.moz.wifi.unloaddriver=1
 
 # GPS
 ro.qc.sdk.izat.premium_enabled=1
