@@ -65,8 +65,6 @@ ro.qualcomm.cabl=0
 
 # Recovery
 ro.cwm.enable_key_repeat=true
-ro.cwm.forbid_mount=/fsg,/firmware,/persist
-ro.cwm.forbid_format=/boot,/fsg,/firmware,/persist
 
 # Sdcard
 persist.fuse_sdcard=true
