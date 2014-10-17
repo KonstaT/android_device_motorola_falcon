@@ -112,6 +112,9 @@ service mpdecision /system/bin/mpdecision --avg_comp
 service thermal-engine /system/bin/thermal-engine -c /etc/thermal-engine-8226.conf
     class main
     user root
+    socket thermal-send-client stream 0666 system system
+    socket thermal-recv-client stream 0660 system system
+    socket thermal-recv-passive-client stream 0666 system system
     group root
 
 service qseecomd /system/bin/qseecomd
