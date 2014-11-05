@@ -71,9 +71,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 # Build
 TARGET_SYSTEMIMAGE_USE_SQUISHER := true
 
-# Classpath
-PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
-
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 
