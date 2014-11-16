@@ -117,6 +117,11 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
+    dhcpcd.conf \
+    hostapd \
+    wpa_supplicant
+
+PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     wcnss_service
 

@@ -141,9 +141,9 @@ service adsprpcd /system/bin/adsprpcd
     group media
 
 service wcnss-service /system/bin/wcnss_service
-    class late_start
-    user root
-    group system wifi
+    class main
+    user system
+    group system wifi radio
     oneshot
 
 service ppd /system/bin/mm-pp-daemon
