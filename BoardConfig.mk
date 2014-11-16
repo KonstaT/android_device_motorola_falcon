@@ -24,7 +24,6 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := cortex-a7
 TARGET_ARCH_VARIANT := armv7-a-neon
 
@@ -54,7 +53,6 @@ TARGET_KERNEL_MODULES += WLAN_MODULES
 TARGET_OTA_ASSERT_DEVICE := xt1031,xt1032,xt1033,xt1034,falcon_umts,falcon_umtsds,falcon_cdma,falcon_retuaws,falcon,falcon_gpe
 
 # Audio
-TARGET_QCOM_AUDIO_VARIANT := caf
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_DISABLED_ANC_HEADSET := true
 AUDIO_FEATURE_DISABLED_SSR := true
@@ -75,7 +73,6 @@ TARGET_SYSTEMIMAGE_USE_SQUISHER := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Graphics
-TARGET_QCOM_DISPLAY_VARIANT := caf-new
 BOARD_EGL_CFG := device/motorola/falcon/prebuilt/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -91,10 +88,6 @@ BOARD_HARDWARE_CLASS := device/motorola/falcon/cmhw/
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Media
-TARGET_QCOM_MEDIA_VARIANT := caf-new
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-
 # Motorola
 TARGET_USES_MOTOROLA_LOG := true
 
@@ -108,13 +101,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
-# QCOM BSP
-TARGET_USES_QCOM_BSP := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
-
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/motorola/falcon/ramdisk/fstab.qcom
