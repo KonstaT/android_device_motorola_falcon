@@ -48,10 +48,12 @@ on fs
 
     wait /dev/block/platform/msm_sdcc.1/by-name/persist
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/persist /persist nosuid nodev barrier=1
+    restorecon_recursive /persist
+    mkdir /persist/data 0700 system system
 
     wait /dev/block/platform/msm_sdcc.1/by-name/modem
     exec /system/bin/resize2fs /dev/block/platform/msm_sdcc.1/by-name/modem
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro nosuid nodev barrier=0
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro nosuid nodev barrier=0 context=u:object_r:firmware_file:s0
     write /sys/kernel/boot_adsp/boot 1
 
 on post-fs-data

@@ -41,7 +41,7 @@ on init
 on fs
     # Mount modem FSG partition
     wait /dev/block/platform/msm_sdcc.1/by-name/fsg
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/fsg /fsg ro nosuid nodev barrier=0 context=u:object_r:firmware_file:s0
 
     # Backup ramconsole on abnormal reboot.
     copy /proc/last_kmsg /data/dontpanic/last_kmsg
