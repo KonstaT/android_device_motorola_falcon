@@ -113,58 +113,6 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/motorola/falcon/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    adbd.te \
-    app.te \
-    bluetooth_loader.te \
-    bridge.te \
-    camera.te \
-    device.te \
-    dhcp.te \
-    dnsmasq.te \
-    domain.te \
-    drmserver.te \
-    file_contexts \
-    file.te \
-    hostapd.te \
-    init_shell.te \
-    init.te \
-    libqc-opt.te \
-    mediaserver.te \
-    mpdecision.te \
-    netd.te \
-    netmgrd.te \
-    nfc.te \
-    property_contexts \
-    property.te \
-    qcom.te \
-    qmux.te \
-    radio.te \
-    rild.te \
-    rmt.te \
-    sdcard_internal.te \
-    sdcardd.te \
-    sensors.te \
-    shell.te \
-    surfaceflinger.te \
-    system.te \
-    tee.te \
-    te_macros \
-    thermald.te \
-    ueventd.te \
-    vold.te \
-    wpa_supplicant.te \
-    zygote.te
-
-ifneq ($(TARGET_BUILD_VARIANT),user)
-BOARD_SEPOLICY_UNION += \
-    su.te
-endif
-
 # Vendor init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
