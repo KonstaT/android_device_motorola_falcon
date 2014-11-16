@@ -2,15 +2,17 @@
 # Audio
 ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
 use.voice.path.for.pcm.voip=true
-audio.offload.24bit.enable=0
+audio.offload.24bit.enable=false
 audio.offload.buffer.size.kb=32
-audio.offload.gapless.enabled=false
+audio.offload.gapless.enabled=true
 audio.offload.multiple.enabled=false
-audio.offload.pcm.enable=true
+audio.offload.pcm.16bit.enable=true
+audio.offload.pcm.24bit.enable=true
 av.offload.enable=true
 av.streaming.offload.enable=true
-lpa.decode=true
 tunnel.audio.encode=true
 qcom.hw.aac.encoder=true
 ro.audio.fm_max_volume=4096

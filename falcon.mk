@@ -22,7 +22,6 @@ $(call inherit-product-if-exists, vendor/motorola/falcon/falcon-vendor.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_policy.msm8226 \
     audio.primary.msm8226 \
     audio.a2dp.default \
     audio.r_submix.default \
