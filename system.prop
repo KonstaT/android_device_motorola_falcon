@@ -14,7 +14,6 @@ audio.offload.pcm.24bit.enable=true
 av.offload.enable=true
 av.streaming.offload.enable=true
 tunnel.audio.encode=true
-qcom.hw.aac.encoder=true
 ro.audio.fm_max_volume=4096
 persist.audio.calfile0=/etc/Bluetooth_cal.acdb
 persist.audio.calfile1=/etc/General_cal.acdb
