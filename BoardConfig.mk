@@ -113,6 +113,9 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 # Vendor init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
