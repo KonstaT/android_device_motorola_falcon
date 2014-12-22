@@ -81,6 +81,9 @@ BOARD_HARDWARE_CLASS := device/motorola/falcon/cmhw/
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Memory
+MALLOC_IMPL := dlmalloc
+
 # Motorola
 TARGET_USES_MOTOROLA_LOG := true
 
