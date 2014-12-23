@@ -118,6 +118,31 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+BOARD_SEPOLICY_DIRS += \
+    device/motorola/falcon/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    akmd8963.te \
+    atvc.te \
+    batt_health.te \
+    device.te \
+    file_contexts \
+    file.te \
+    init.te \
+    init_shell.te \
+    keystore.te \
+    mediaserver.te \
+    mm-pp-daemon.te \
+    mm-qcamerad.te \
+    mpdecision.te \
+    platform_app.te \
+    property_contexts \
+    property.te \
+    rild.te \
+    rmt_storage.te \
+    system_app.te \
+    thermal-engine.te
+
 # Vendor init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
