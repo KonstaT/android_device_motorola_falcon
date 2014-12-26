@@ -225,7 +225,7 @@ service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
     user root
     oneshot
 
-service mmi-touch-sh /system/bin/logwrapper /system/bin/sh /init.mmi.touch.sh synaptics aps
+service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh synaptics aps
     class late_start
     user root
     oneshot
@@ -242,7 +242,7 @@ on property:ro.debuggable=1
     # enable group read/write to /dev/log/kernel
     chmod 0660 /dev/log/kernel
 
-service hw_revs /system/bin/logwrapper /system/bin/hardware_revisions.sh
+service hw_revs /system/bin/hardware_revisions.sh
     class main
     user system
     group system
