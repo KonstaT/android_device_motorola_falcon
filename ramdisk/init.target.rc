@@ -38,8 +38,6 @@ on early-init
     write /sys/kernel/mm/ksm/run 1
 
 on init
-    chmod 755 /gpecheck.sh
-    exec /gpecheck.sh
     # CM: We use our own ril-daemon service definition, see mmi-ril-daemon
     stop ril-daemon
 
