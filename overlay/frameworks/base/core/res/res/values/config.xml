@@ -153,9 +153,6 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">0</integer>
 
-    <!-- Device supports LED flashlight -->
-    <bool name="config_enableTorch">true</bool>
-
     <!-- Disable lockscreen translucent decor by default -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 

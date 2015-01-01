@@ -100,10 +100,6 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 PRODUCT_PACKAGES += \
     power.msm8226
 
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
 # Wifi
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
