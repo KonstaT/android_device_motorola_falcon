@@ -59,9 +59,6 @@ mmp.enable.3g2=true
 mm.enable.smoothstreaming=true
 mm.enable.qcom_parser=37491
 
-# Memory
-ro.ksm.default=1
-
 # Qualcomm
 com.qc.hardware=true
 ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
