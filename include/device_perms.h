@@ -34,7 +34,7 @@
 
 #define CONTROL_PERMS_APPEND \
     { "mmi-ril-daemon",AID_RADIO, AID_RADIO }, \
-    { "ril-daemon1",AID_RADIO, AID_RADIO }, \
-    { "ril-daemon2",AID_RADIO, AID_RADIO },
+    { "ril-daemon2",AID_RADIO, AID_RADIO }, \
+    { "ril-daemon3",AID_RADIO, AID_RADIO },
 
 #endif /* DEVICE_PERMS_H */
