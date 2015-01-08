@@ -438,13 +438,6 @@ service xtwifi_client /system/bin/xtwifi-client
     group net_admin wifi inet gps
     disabled
 
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    class late_start
-    user root
-    group system fm_radio
-    disabled
-    oneshot
-
 service qcom-sh /system/bin/sh /init.qcom.sh
     class late_start
     user root
