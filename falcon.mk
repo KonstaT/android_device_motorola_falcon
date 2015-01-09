@@ -84,13 +84,9 @@ PRODUCT_PACKAGES += \
     libdashplayer \
     libdivxdrmdecrypt \
     libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
     libOmxCore \
-    libOmxEvrcEnc \
     libOmxVdec \
     libOmxVenc \
-    libOmxQcelp13Enc \
     libstagefrighthw \
     qcmediaplayer
 
