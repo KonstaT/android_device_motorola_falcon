@@ -46,8 +46,7 @@ PRODUCT_PACKAGES += \
     copybit.msm8226\
     gralloc.msm8226 \
     hwcomposer.msm8226 \
-    memtrack.msm8226 \
-    liboverlay
+    memtrack.msm8226
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -78,14 +77,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.msm8226
 
-# Misc
-PRODUCT_PACKAGES += \
-    libxml2
-
 # OMX
 PRODUCT_PACKAGES += \
     libdashplayer \
-    libdivxdrmdecrypt \
     libmm-omxcore \
     libOmxCore \
     libOmxVdec \
