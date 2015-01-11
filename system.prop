@@ -64,9 +64,6 @@ com.qc.hardware=true
 ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 ro.qualcomm.cabl=0
 
-# Recovery
-ro.cwm.enable_key_repeat=true
-
 # Sdcard
 persist.fuse_sdcard=true
 ro.crypto.fuse_sdcard=true
