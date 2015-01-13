@@ -217,9 +217,6 @@ on boot
     write /sys/bus/msm_subsys/devices/subsys2/restart_level related
     write /sys/bus/msm_subsys/devices/subsys3/restart_level related
 
-on property:installd.post_fs_data_ready=1
-    exec /system/bin/refuse
-
 service mmi-boot-sh /system/bin/sh /init.mmi.boot.sh
     class core
     user root
