@@ -80,7 +80,6 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libdashplayer \
-    libmm-omxcore \
     libOmxCore \
     libOmxVdec \
     libOmxVenc \
