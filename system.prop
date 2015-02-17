@@ -64,13 +64,14 @@ com.qc.hardware=true
 ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 ro.qualcomm.cabl=0
 
-# Sdcard
-persist.fuse_sdcard=true
-ro.crypto.fuse_sdcard=true
-
 # SSR
 persist.sys.ssr.restart_level=3
 persist.sys.qc.sub.rdump.on=1
+
+# Storage
+persist.fuse_sdcard=true
+ro.crypto.fuse_sdcard=true
+persist.sys.isUsbOtgEnabled=true
 
 # Telephony
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
