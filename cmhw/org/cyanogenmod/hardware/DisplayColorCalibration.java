@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2015 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import java.io.File;
 public class DisplayColorCalibration {
 
     private static final String KCAL_TUNING_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal";
-    private static final String KCAL_CTRL_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal_ctrl";
+    private static final String KCAL_CTRL_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal_enable";
 
     public static boolean isSupported() {
         File file = new File(KCAL_TUNING_FILE);
@@ -31,11 +31,11 @@ public class DisplayColorCalibration {
     }
 
     public static int getMaxValue() {
-        return 255;
+        return 256;
     }
 
     public static int getMinValue() {
-        return 0;
+        return 35;
     }
 
     public static int getDefValue() {
