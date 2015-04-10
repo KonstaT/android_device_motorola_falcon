@@ -173,74 +173,22 @@
     <!-- Disable lockscreen translucent decor by default -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
-    <!-- Vibrator pattern for feedback about a long screen/key press -->
-    <integer-array name="config_longPressVibePattern">
-        <item>0</item>
-        <item>20</item>
-    </integer-array>
-
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
-        <item>0</item>
-        <item>15</item>
+        <item>18</item>
     </integer-array>
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
-        <item>0</item>
-        <item>13</item>
-    </integer-array>
-
-    <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
-    <integer-array name="config_safeModeDisabledVibePattern">
-        <item>0</item>
-        <item>15</item>
-    </integer-array>
-
-    <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
-    <integer-array name="config_safeModeEnabledVibePattern">
-        <item>0</item>
-        <item>15</item>
-        <item>200</item>
+        <item>18</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
     <integer-array name="config_scrollBarrierVibePattern">
         <item>0</item>
-        <item>13</item>
-        <item>17</item>
-        <item>13</item>
-    </integer-array>
-
-    <!-- Vibrator pattern to be used as the default for notifications
-         that specify DEFAULT_VIBRATE.
-     -->
-    <integer-array name="config_defaultNotificationVibePattern">
-        <item>0</item>
-        <item>230</item>
-        <item>170</item>
-        <item>230</item>
-    </integer-array>
-
-    <!-- Vibrator pattern to be used as the default for notifications
-         that do not specify vibration but vibrate anyway because the device
-         is in vibrate mode.
-     -->
-    <integer-array name="config_notificationFallbackVibePattern">
-        <item>0</item>
-        <item>75</item>
-        <item>130</item>
-        <item>75</item>
-    </integer-array>
-
-    <!-- Vibrator pattern to be used as for notifications while alerts
-         are disabled (e.g. during phone calls) if enabled by the user.
-     -->
-    <integer-array name="config_notificationNoAlertsVibePattern">
-        <item>0</item>
-        <item>30</item>
-        <item>75</item>
-        <item>30</item>
+        <item>15</item>
+        <item>60</item>
+        <item>15</item>
     </integer-array>
 
     <!-- Is the device LTE capable -->
