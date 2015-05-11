@@ -117,6 +117,13 @@ audio.offload.gapless.enabled=true
 # Audio
 ro.qc.sdk.audio.fluencetype=fluence
 ro.audio.fm_max_volume=4096
+persist.audio.calfile0=/etc/Bluetooth_cal.acdb
+persist.audio.calfile1=/etc/General_cal.acdb
+persist.audio.calfile2=/etc/Global_cal.acdb
+persist.audio.calfile3=/etc/Handset_cal.acdb
+persist.audio.calfile4=/etc/Hdmi_cal.acdb
+persist.audio.calfile5=/etc/Headset_cal.acdb
+persist.audio.calfile6=/etc/Speaker_cal.acdb
 
 # Bluetooth
 qcom.bt.le_dev_pwr_class=1
