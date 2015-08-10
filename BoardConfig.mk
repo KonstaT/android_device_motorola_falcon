@@ -67,7 +67,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Graphics
-BOARD_EGL_CFG := device/motorola/falcon/prebuilt/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
