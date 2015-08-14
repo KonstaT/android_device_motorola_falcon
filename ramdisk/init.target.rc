@@ -81,6 +81,10 @@ on boot
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
 
+    # touchscreen gestures
+    chown system system /sys/devices/f9927000.i2c/i2c-5/5-0020/wake_gesture_enabled
+    chmod 0660 /sys/devices/f9927000.i2c/i2c-5/5-0020/wake_gesture_enabled
+
     # setup trace dir
     mkdir /cache/trace 0777 root shell
     chown root shell /cache/trace
