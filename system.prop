@@ -73,7 +73,7 @@ ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 ro.qualcomm.cabl=0
 
 # Scheduler
-sys.io.scheduler=row
+sys.io.scheduler=bfq
 
 # SSR
 persist.sys.ssr.restart_level=3
