@@ -72,6 +72,9 @@ com.qc.hardware=true
 ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 ro.qualcomm.cabl=0
 
+# Scheduler
+sys.io.scheduler=row
+
 # SSR
 persist.sys.ssr.restart_level=3
 persist.sys.qc.sub.rdump.on=1
