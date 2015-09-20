@@ -117,7 +117,6 @@ BOARD_SEPOLICY_UNION += \
     akmd8963.te \
     atvc.te \
     batt_health.te \
-    bootanim.te \
     device.te \
     file_contexts \
     file.te \
